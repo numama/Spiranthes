@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_24_164749) do
+ActiveRecord::Schema.define(version: 2019_02_24_190300) do
+
+  create_table "abilities", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.integer "realm_id"
-    t.integer "attribute_id"
+    t.integer "property_id"
     t.integer "rarity"
     t.integer "type_id"
     t.integer "leaderskill_id"
+    t.string "skill"
+    t.text "skill_description"
     t.integer "ability1_id"
     t.integer "ability2_id"
     t.integer "ability3_id"
@@ -34,9 +43,34 @@ ActiveRecord::Schema.define(version: 2019_02_24_164749) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
+  create_table "leaderskills", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "realms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
