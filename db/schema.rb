@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_23_215350) do
+ActiveRecord::Schema.define(version: 2019_02_24_164749) do
+
+  create_table "characters", force: :cascade do |t|
+    t.string "name"
+    t.integer "realm_id"
+    t.integer "attribute_id"
+    t.integer "rarity"
+    t.integer "type_id"
+    t.integer "leaderskill_id"
+    t.integer "ability1_id"
+    t.integer "ability2_id"
+    t.integer "ability3_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "body"
