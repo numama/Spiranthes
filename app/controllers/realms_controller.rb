@@ -1,0 +1,2 @@
+class RealmsController < ApplicationController
+end
