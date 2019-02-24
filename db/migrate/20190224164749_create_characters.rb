@@ -7,6 +7,8 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
       t.integer :rarity
       t.integer :type_id
       t.integer :leaderskill_id
+      t.string  :skill
+      t.text    :skill_discription
       t.integer :ability1_id
       t.integer :ability2_id
       t.integer :ability3_id
