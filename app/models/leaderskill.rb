@@ -1,0 +1,2 @@
+class Leaderskill < ApplicationRecord
+end
