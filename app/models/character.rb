@@ -1,6 +1,12 @@
 class Character < ApplicationRecord
 
-  # has_one :realm, :attribute, :type, :leaderskill, :ability
+  belongs_to :realm
+  belongs_to :attribute
+  belongs_to :type
+  belongs_to :leaderskill
+  belongs_to :ability1, class_name: 'Ability', :foreign_key => 'ability1_id'
+  belongs_to :ability2, class_name: 'Ability', :foreign_key => 'ability2_id'
+  belongs_to :ability3, class_name: 'Ability', :foreign_key => 'ability3_id'
 
   validates :name,
     presence: true, 
