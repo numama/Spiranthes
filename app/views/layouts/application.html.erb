@@ -10,9 +10,13 @@
   </head>
 
   <body>
-    <div class="container">
-    <h1><%= link_to image_tag('logo.png', class: 'logo'), root_path %></h1>
-    <%= yield %>
-    </div>
+    <header>
+      <a href="/">ラストピリオド攻略</a>
+    </header>
+    <main>
+      <%= yield %>
+    </main>
+    <footer>
+    </footer>
   </body>
 </html>
