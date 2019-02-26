@@ -2,6 +2,6 @@
 
 <ul>
   <% @characters.each do |character| %>
-  <li><%= character.name %></li>
+  <li><%= link_to character.name, character_path(character) %></li>
   <% end %>
 </ul>
