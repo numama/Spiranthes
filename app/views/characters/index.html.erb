@@ -1,0 +1,7 @@
+<h2>キャラクター</h2>
+
+<ul>
+  <% @characters.each do |character| %>
+  <li><%= link_to character.name, character_path(character) %></li>
+  <% end %>
+</ul>

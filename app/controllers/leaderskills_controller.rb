@@ -1,0 +1,2 @@
+class LeaderskillsController < ApplicationController
+end
