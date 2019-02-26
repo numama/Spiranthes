@@ -10,21 +10,6 @@
   Post.create(title: "title #{i}", body: "body#{i}")
 end
 
-Ability.create(name: "リベンジ", description: "戦闘不能になる時、攻撃してきた敵に大きなダメージを与える")
-Ability.create(name: "ガッツ", description: "戦闘不能になる時、一定回数HP1で生き残る")
-
-Property.create(name: "flare")
-Property.create(name: "light")
-
-Leaderskill.create(name: "英帝の威光", description: "ヒューマレルム所属ユニットの攻撃力大アップ")
-Leaderskill.create(name: "軍帝の乱舞", description: "スペアレルム所属のユニットのスピード大アップ")
-
-Realm.create(name: "ヒューマ")
-Realm.create(name: "スペア")
-
-Type.create(name: "アッタッカー")
-Type.create(name: "ヒーロー")
-
 Character.create(
   name: "ゼクス",
   realm_id: 1,
@@ -36,18 +21,74 @@ Character.create(
   skill_description: "description",
   ability1_id: 1,
   ability2_id: 2,
-  ability3_id: 1
+  ability3_id: 3
 )
 Character.create(
   name: "バルザック",
   realm_id: 2,
-  property_id: 2,
+  property_id: 4,
   rarity: 5,
   type_id: 2,
   leaderskill_id: 2,
   skill: "skill bal",
   skill_description: "description bal",
   ability1_id: 1,
-  ability2_id: 1,
-  ability3_id: 2
+  ability2_id: 4,
+  ability3_id: 5
+)
+
+Character.create(
+  name: "ネロ",
+  realm_id: 3,
+  property_id: 3,
+  rarity: 5,
+  type_id: 4,
+  leaderskill_id: 3,
+  skill: "skill bal",
+  skill_description: "description bal",
+  ability1_id: 1,
+  ability2_id: 4,
+  ability3_id: 6
+)
+
+Character.create(
+  name: "スライ",
+  realm_id: 3,
+  property_id: 3,
+  rarity: 5,
+  type_id: 4,
+  leaderskill_id: 3,
+  skill: "skill bal",
+  skill_description: "description bal",
+  ability1_id: 1,
+  ability2_id: 4,
+  ability3_id: 6
+)
+
+Character.create(
+  name: "オラクル",
+  realm_id: 3,
+  property_id: 3,
+  rarity: 5,
+  type_id: 4,
+  leaderskill_id: 3,
+  skill: "skill bal",
+  skill_description: "description bal",
+  ability1_id: 1,
+  ability2_id: 4,
+  ability3_id: 6
+)
+
+Character.create(
+  name: "メルディア",
+  realm_id: 3,
+  property_id: 3,
+  rarity: 5,
+  type_id: 4,
+  leaderskill_id: 3,
+  skill: "skill bal",
+  skill_description: "description bal",
+  ability1_id: 1,
+  ability2_id: 4,
+  ability3_id: 6
 )
