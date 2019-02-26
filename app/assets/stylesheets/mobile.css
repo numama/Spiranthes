@@ -2,6 +2,7 @@
 body {
   font-family: Verdana, sans-serif;
   font-size: 14px;
+  overflow: hidden;
 }
 
 header {
@@ -16,8 +17,6 @@ header {
 
 .container {
   display: flex;
-/*  flex-direction: row-reverse;
-  justify-content: flex-end;*/
   max-width: 1000px;
   width: 100%;
   margin: 20px auto;
@@ -26,8 +25,7 @@ header {
 
 aside {
   order: 1;
-  width: 180px;
-  margin-right: 40px;
+  width: 100%;
 }
 
 aside > a {
@@ -39,37 +37,5 @@ aside > a {
 
 main {
   order: 2;
-  width: 760px;
-}
-
-h2 {
-  font-size: 16px;
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-}
-
-input[type="text"], textarea {
-  box-sizing: border-box;
-  width: 400px;
-  padding: 5px;
-}
-
-textarea {
-  height: 160px;
-}
-
-.error {
-  font-size: 12px;
-  font-weight: bold;
-  color: tomato;
-}
-
-.command {
-  font-size: 12px;
-}
-
-.h3 {
-  font-size: 14px;
-  padding-top: 30px;
+  width: 100%;
 }
