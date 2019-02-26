@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -13,9 +14,19 @@
     <header>
       <a href="/">ラストピリオド攻略</a>
     </header>
-    <main>
-      <%= yield %>
-    </main>
+    <div class="container">
+      <main>
+        <%= yield %>
+      </main>
+      <aside>
+        <a href="/">初心者ガイド</a>
+        <a href="/">リセマラ</a>
+        <a href="/">ユニットランキング</a>
+        <a href="/">ユニット評価</a>
+        <a href="/">ユニットを探す</a>
+        <a href="/">ギルバト攻略</a>
+      </aside>
+    </div>
     <footer>
     </footer>
   </body>
