@@ -1,7 +1,15 @@
-<h2>キャラクター</h2>
+<h1>ユニット一覧</h1>
 
-<ul>
+<table class="characters-table">
   <% @characters.each do |character| %>
-  <li><%= link_to character.name, character_path(character) %></li>
+  <tr>
+    <td>
+      <%= image_tag "characters/icons/nil.png", class: "character-icon-image" %>
+      <%= link_to character.name, character_path(character) %>
+    </td>
+    <td><%= character.property.name %></td>
+    <td><%= character.realm.name %></td>
+    <td><%= character.type.name %></td>
+  </tr>
   <% end %>
-</ul>
+</table>

@@ -2,17 +2,33 @@
 <html>
   <head>
     <title>Spiranthes</title>
+    <meta name="viewport" content="width=360,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="container">
-    <h1><%= link_to image_tag('logo.png', class: 'logo'), root_path %></h1>
-    <%= yield %>
+    <header>
+      <a href="/">ラストピリオド攻略</a>
+    </header>
+    <div class="overall-container">
+      <main>
+      <%= yield %>
+      </main>
+      <aside>
+        <a href="/">リセマラ</a>
+        <a href="/">ユニットランク</a>
+        <a href="/">ユニットを探す</a>
+        <a href="/">初心者ガイド</a>
+        <a href="/">ギルバト攻略</a>
+        <a href="/">Q & A</a>
+      </aside>
     </div>
+    <footer>
+    </footer>
   </body>
 </html>
