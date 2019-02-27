@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Spiranthes</title>
+    <meta name="viewport" content="width=360,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,17 +15,17 @@
     <header>
       <a href="/">ラストピリオド攻略</a>
     </header>
-    <div class="container">
+    <div class="overall-container">
       <main>
-        <%= yield %>
+      <%= yield %>
       </main>
       <aside>
-        <a href="/">初心者ガイド</a>
         <a href="/">リセマラ</a>
-        <a href="/">ユニットランキング</a>
-        <a href="/">ユニット評価</a>
+        <a href="/">ユニットランク</a>
         <a href="/">ユニットを探す</a>
+        <a href="/">初心者ガイド</a>
         <a href="/">ギルバト攻略</a>
+        <a href="/">Q & A</a>
       </aside>
     </div>
     <footer>
