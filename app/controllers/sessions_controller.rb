@@ -1,9 +1,13 @@
 class SessionsController < ApplicationController
-  
+
   def new
     # application.heml.erbを使わない
     # 別のテンプレートファイルをつくってみよう
-    render layout: false
+    if logged_in?
+      redirect_to root_path
+    else
+      render layout: false
+    end
   end
 
   # ユーザ名のレコードがなければ戻す
