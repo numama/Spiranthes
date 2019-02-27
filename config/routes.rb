@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :characters
 
   # ユーザ
-  # get 'users/new', to: 'users#new'
+  # get 'signup', to: 'users#new'
   # post 'users', to: 'users#create'
 
   # セッション
