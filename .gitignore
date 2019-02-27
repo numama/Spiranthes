@@ -18,3 +18,6 @@ doc/
 .DS_Store
 .idea
 .secret
+
+#Ignore character images
+/app/assets/images/characters
