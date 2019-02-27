@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   # ユニット
   resources :characters
 
+  # ユーザ
+  get 'users/new', to: 'users#new'
+  post 'users', to: 'users#create'
+
   # セッション
   get  'login',  to: 'sessions#new'
   post  'login',  to: 'sessions#create'
