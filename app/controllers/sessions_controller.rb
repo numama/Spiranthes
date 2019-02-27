@@ -1,9 +1,12 @@
 class SessionsController < ApplicationController
   
   def new
+    # application.heml.erbを使わない
+    # 別のテンプレートファイルをつくってみよう
+    render layout: false
   end
 
-  # ユーザ名のレコードがなければ
+  # ユーザ名のレコードがなければ戻す
   # ユーザ名とパスワードがDBと一致していなければ戻す
   # 一致していればsign_inメソッドを実行
   def create
