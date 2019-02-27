@@ -4,8 +4,8 @@
   <% @characters.each do |character| %>
   <tr>
     <td>
+      <%= image_tag "characters/icons/nil.png", class: "character-icon-image" %>
       <%= link_to character.name, character_path(character) %>
-      <img src="" alt="">
     </td>
     <td><%= character.property.name %></td>
     <td><%= character.realm.name %></td>
