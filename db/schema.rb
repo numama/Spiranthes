@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 2019_02_28_084549) do
     t.integer "ability3_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "guild_battle_scores"
-    t.integer "rolling_quest_scores"
+    t.integer "guild_battle_score"
+    t.integer "rolling_quest_score"
     t.text "body"
   end
 
