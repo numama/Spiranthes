@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 2019_02_28_084549) do
     t.integer "ability3_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "guild_battle_evaluation"
-    t.string "rolling_quest_evaluation"
-    t.string "description"
+    t.integer "guild_battle_scores"
+    t.integer "rolling_quest_scores"
+    t.text "body"
   end
 
   create_table "comments", force: :cascade do |t|
