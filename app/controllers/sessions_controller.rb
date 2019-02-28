@@ -10,6 +10,11 @@ class SessionsController < ApplicationController
     end
   end
 
+  # @はインスタンス変数につけるので、Userモデルのインスタンスである
+  # userなどは@をつけるのではないか
+  # railsでの扱いがわからないので微妙
+  # あと普段コントローラからどういう条件で変数がViewに渡ってるのか調べる
+
   # ユーザ名のレコードがなければ戻す
   # ユーザ名とパスワードがDBと一致していなければ戻す
   # 一致していればsign_inメソッドを実行
