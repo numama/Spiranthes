@@ -19,6 +19,9 @@ class CharactersController < ApplicationController
 
   def create
     @character = Character.new(character_params)
+    # なんか以下2つを追加しないとエラーになる
+    @leaderskill_array = Leaderskill.get_array
+    @ability_array = Ability.get_array
     if @character.save
       redirect_to new_character_path
     else
@@ -28,10 +31,14 @@ class CharactersController < ApplicationController
 
   def edit
     @character = Character.find(params[:id])
+    @leaderskill_array = Leaderskill.get_array
+    @ability_array = Ability.get_array
   end
 
   def update
     @character = Character.find(params[:id])
+    @leaderskill_array = Leaderskill.get_array
+    @ability_array = Ability.get_array
     if @character.update(character_params)
       redirect_to character_path(params[:id])
     else
