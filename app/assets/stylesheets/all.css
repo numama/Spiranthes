@@ -127,26 +127,51 @@ h3 {
   width: 100%;
   border-top : 1px solid #ddd;
   border-left: 1px solid #ddd;
+  font-size: 12px;
 }
 
-.characters-table td {
-  height: 80px;
+.characters-table td, th {
+  min-height: 100px;
   text-align: center;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  font-size: 14px;
 }
 
 .characters-table tr:nth-child(even) {
-  background: #fcfcfc;
+  background: #f9f9f9;
+}
+
+.characters-table th {
+  height: 40px;
+}
+
+.characters-table td > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #518daf;
+  font-weight: bold;
+}
+
+.characters-table-icon {
+  padding: 5px;
+  width: 30%;
+}
+
+.characters-table-score {
+  width: 20%;
+  font-size: 16px;
 }
 
 .character-icon-image {
-  margin: 0 auto;
+  margin: 5px auto;
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
+
+/* form */
 
 .form-character {
   margin-bottom: 20px;

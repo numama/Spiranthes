@@ -5,15 +5,29 @@
 <% end %>
 
 <table class="characters-table">
+  <tr class="characters-table-header">
+    <th>ユニット</th>
+    <th>属性</th>
+    <th>レルム</th>
+    <th>周回</th>
+    <th>ギルバト</th>
+  </tr>
   <% @characters.each do |character| %>
   <tr>
-    <td>
-      <%= image_tag "characters/icons/nil.png", class: "character-icon-image" %>
-      <%= link_to character.name, character_path(character) %>
+    <td class="characters-table-icon">
+      <a href="<%= url_for character_path(character) %>">
+        <%= image_tag "characters/icons/nil.png", class: "character-icon-image" %>
+        <%= character.name %>
+      </a>
     </td>
     <td><%= character.property.name %></td>
     <td><%= character.realm.name %></td>
-    <td><%= character.type.name %></td>
+    <td class="characters-table-score">
+      <%= character.rolling_quest_score %>点
+    </td>
+    <td class="characters-table-score">
+      <%= character.guild_battle_score %>点
+    </td>
   </tr>
   <% end %>
 </table>
