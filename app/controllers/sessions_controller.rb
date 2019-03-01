@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   def new
     # application.heml.erbを使わない
     # 別のテンプレートファイルをつくってみよう
+    # ログインしてるユーザがログインページに行こうとすると、ルートファイルへ飛ばす
     if logged_in?
       redirect_to root_path
     else
@@ -14,6 +15,7 @@ class SessionsController < ApplicationController
   # userなどは@をつけるのではないか
   # railsでの扱いがわからないので微妙
   # あと普段コントローラからどういう条件で変数がViewに渡ってるのか調べる
+  # => インスタンス変数はすべてViewに渡ることになる
 
   # ユーザ名のレコードがなければ戻す
   # ユーザ名とパスワードがDBと一致していなければ戻す
@@ -48,7 +50,7 @@ class SessionsController < ApplicationController
       cookies.permanent[:remember_token] = @remember_token
       # updateメソッドでremember_tokenを書き換える
       # そのトークンはUserモデルに書いたハッシュ化メソッドでハッシュ化する
-      user.update(remember_token: User.encrypt(remember_token))
+      user.update(remember_token: User.encrypt(@remember_token))
       # @current_userにログインできたユーザをセット
       # これこのあとリダイレクトしても変数って渡っていくの？　消えるならここでセットする意味ない
       @current_user = @user
