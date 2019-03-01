@@ -15,7 +15,7 @@
   <% @characters.each do |character| %>
   <tr>
     <td class="characters-table-icon">
-      <a href="<%= url_for character_path(character) %>">
+      <a href="<%= url_for character_path(character, anchor: "details") %>">
         <%= image_tag "characters/icons/nil.png", class: "character-icon-image" %>
         <%= character.name %>
       </a>

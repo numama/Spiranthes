@@ -1,4 +1,4 @@
-<h1><%= @character.name %> の能力・評価</h1>
+<h1 id="details"><%= @character.name %> の能力・評価</h1>
 
 <% if @current_user %>
 <%= link_to "編集", edit_character_path, class: "admin-button" %>
