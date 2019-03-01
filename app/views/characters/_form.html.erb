@@ -1,3 +1,4 @@
+<%= @character.errors.messages.inspect %>
 <%= form_for @character do |f| %>
 
   <section class="form-character">
@@ -46,22 +47,22 @@
 
   <section class="form-character">
     <h3>リーダースキル</h3>
-    <%= f.select :leaderskill_id, @leaderskill_array, prompt: "選択してください" %>
+    <%= f.select :leaderskill_id, @leaderskill_array, selected: 1 %>
   </section>
 
   <section class="form-character">
     <h3>アビリティ</h3>
     <label class="label-block">
       アビ1
-      <%= f.select :ability1_id, @ability_array, prompt: "選択してください" %>
+      <%= f.select :ability1_id, @ability_array, selected: 1 %>
     </label>
     <label class="label-block">
       アビ2
-      <%= f.select :ability2_id, @ability_array, prompt: "選択してください" %>
+      <%= f.select :ability2_id, @ability_array, selected: 1 %>
     </label>
     <label class="label-block">
       アビ3
-      <%= f.select :ability3_id, @ability_array, prompt: "選択してください" %>
+      <%= f.select :ability3_id, @ability_array, selected: 1 %>
     </label>
   </section>
 
