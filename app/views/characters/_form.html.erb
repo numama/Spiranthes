@@ -1,0 +1,99 @@
+<%= form_for @character do |f| %>
+
+  <section class="form-character">
+    <h3>ユニット名</h3>
+    <label>
+      <%= f.text_field :name %>
+    </label>
+  </section>
+
+  <section class="form-character">
+    <h3>レア度</h3>
+    <label><%= f.radio_button :rarity, 5, checked: true %>星5</label>
+    <label><%= f.radio_button :rarity, 4 %>星4</label>
+    <label><%= f.radio_button :rarity, 3 %>星3</label>
+  </section>
+
+  <section class="form-character">
+    <h3>属性</h3>
+    <label><%= f.radio_button :property_id, 1, checked: true %>炎</label>
+    <label><%= f.radio_button :property_id, 2 %>木</label>
+    <label><%= f.radio_button :property_id, 3 %>水</label>
+    <label><%= f.radio_button :property_id, 4 %>光</label>
+    <label><%= f.radio_button :property_id, 5 %>闇</label>
+  </section>
+
+  <section class="form-character">
+    <h3>レルム</h3>
+    <label><%= f.radio_button :realm_id, 1, checked: true %>ヒューマ</label>
+    <label><%= f.radio_button :realm_id, 2 %>スペア</label>
+    <label><%= f.radio_button :realm_id, 3 %>アニマル</label>
+    <label><%= f.radio_button :realm_id, 4 %>ブラッド</label>
+    <label><%= f.radio_button :realm_id, 5 %>スカイ</label>
+    <label><%= f.radio_button :realm_id, 6 %>ヘル</label>
+    <label><%= f.radio_button :realm_id, 7 %>アンノウン</label>
+  </section>
+
+  <section class="form-character">
+    <h3>タイプ</h3>
+    <label><%= f.radio_button :type_id, 1, checked: true %>アタッカー</label>
+    <label><%= f.radio_button :type_id, 2 %>ヒーロー</label>
+    <label><%= f.radio_button :type_id, 3 %>キラー</label>
+    <label><%= f.radio_button :type_id, 4 %>ジャマー</label>
+    <label><%= f.radio_button :type_id, 5 %>ディフェンダー</label>
+    <label><%= f.radio_button :type_id, 6 %>サポーター</label>
+  </section>
+
+  <section class="form-character">
+    <h3>リーダースキル</h3>
+    <%= f.select :leaderskill_id, @leaderskill_array, prompt: "選択してください" %>
+  </section>
+
+  <section class="form-character">
+    <h3>アビリティ</h3>
+    <label class="label-block">
+      アビ1
+      <%= f.select :ability1_id, @ability_array, prompt: "選択してください" %>
+    </label>
+    <label class="label-block">
+      アビ2
+      <%= f.select :ability2_id, @ability_array, prompt: "選択してください" %>
+    </label>
+    <label class="label-block">
+      アビ3
+      <%= f.select :ability3_id, @ability_array, prompt: "選択してください" %>
+    </label>
+  </section>
+
+  <section class="form-character">
+    <h3>スキル</h3>
+    <label class="label-block">
+      スキル名
+      <%= f.text_field :skill %>
+    </label>
+    <label class="label-block">
+      説明文
+      <%= f.text_area :skill_description %>
+    </label>
+  </section>
+
+  <section class="form-character">
+    <h3>点数</h3>
+    <label class="label-block">
+      周回評価
+      <%= f.text_field :rolling_quest_score %>
+    </label>
+    <label class="label-block">
+      ギルバト評価
+      <%= f.text_field :guild_battle_score %>
+    </label>
+  </section>
+
+  <section class="form-character">
+    <h3>ユニット解説</h3>
+    <%= f.text_area :body %>
+  </section>
+  
+
+  <%= f.submit "ユニット追加" %>
+<% end %>

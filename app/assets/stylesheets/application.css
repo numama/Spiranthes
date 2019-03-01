@@ -65,6 +65,7 @@ button {
   flex-basis: auto;
   text-align: left;
   color: #333;
+  word-break: break-all;
 }
  a { text-decoration: none; } 
  a:hover { text-decoration: none; } 
