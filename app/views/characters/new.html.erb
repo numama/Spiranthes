@@ -1,19 +1,21 @@
 <%= form_for @character do |f| %>
 
-  <section>
+  <section class="form-character">
+    <h3>ユニット名</h3>
     <label>
-      ユニット名
       <%= f.text_field :name %>
     </label>
   </section>
 
-  <section>
+  <section class="form-character">
+    <h3>レア度</h3>
     <label><%= f.radio_button :rarity, 5 %>星5</label>
     <label><%= f.radio_button :rarity, 4 %>星4</label>
     <label><%= f.radio_button :rarity, 3 %>星3</label>
   </section>
 
-  <section>
+  <section class="form-character">
+    <h3>属性</h3>
     <label><%= f.radio_button :property_id, 1 %>炎</label>
     <label><%= f.radio_button :property_id, 2 %>木</label>
     <label><%= f.radio_button :property_id, 3 %>水</label>
@@ -21,7 +23,8 @@
     <label><%= f.radio_button :property_id, 5 %>闇</label>
   </section>
 
-  <section>
+  <section class="form-character">
+    <h3>レルム</h3>
     <label><%= f.radio_button :realm_id, 1 %>ヒューマ</label>
     <label><%= f.radio_button :realm_id, 2 %>スペア</label>
     <label><%= f.radio_button :realm_id, 3 %>アニマル</label>
@@ -31,7 +34,8 @@
     <label><%= f.radio_button :realm_id, 7 %>アンノウン</label>
   </section>
 
-  <section>
+  <section class="form-character">
+    <h3>タイプ</h3>
     <label><%= f.radio_button :type_id, 1 %>アタッカー</label>
     <label><%= f.radio_button :type_id, 2 %>ヒーロー</label>
     <label><%= f.radio_button :type_id, 3 %>キラー</label>
@@ -40,13 +44,15 @@
     <label><%= f.radio_button :type_id, 6 %>サポーター</label>
   </section>
 
-  <section>
+  <section class="form-character">
+    <h3>リーダースキル</h3>
     <label>
       <%= f.select :leaderskill_id, @leaderskill.map { |ls| ["#{ls.name} : #{ls.description}", ls.id] } %>
     </label>
   </section>
 
-  <section>
+  <section class="form-character">
+    <h3>アビリティ</h3>
     アビ1
     <%= f.select :ability1, @ability.map { |ability| [ability.name, ability.id] } %>
     アビ2
@@ -55,25 +61,27 @@
     <%= f.select :ability3, @ability.map { |ability| [ability.name, ability.id] } %>
   </section>
 
-  <section>
+  <section class="form-character">
+    <h3>スキル</h3>
     スキル名
     <%= f.text_field :skill %>
     説明文
     <%= f.text_area :skill_description %>
   </section>
 
-  <section>
+  <section class="form-character">
+    <h3>点数</h3>
     周回評価
     <%= f.text_field :rolling_quest_score %>
     ギルバト評価
     <%= f.text_field :guild_battle_score %>
   </section>
 
-  <section>
-    ユニット解説
+  <section class="form-character">
+    <h3>ユニット解説</h3>
     <%= f.text_area :body %>
   </section>
   
 
-  <%= f.submit %>
+  <%= f.submit "ユニット追加" %>
 <% end %>
