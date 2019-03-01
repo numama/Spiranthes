@@ -66,6 +66,9 @@ button {
   text-align: left;
   color: #333;
   word-break: break-all;
+  box-shadow: none;
+  border-radius: none;
+  outline: none;
 }
  a { text-decoration: none; } 
  a:hover { text-decoration: none; } 

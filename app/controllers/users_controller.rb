@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :authentication
 
   def new
-    @user =  User.new
+    @user = User.new
   end
 
   def create

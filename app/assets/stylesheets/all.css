@@ -3,10 +3,14 @@
   general
 ****************************************/
 
+html {
+  height: 100%;
+}
+
 body {
   min-width: 300px;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   font-family: Verdana, sans-serif;
   font-size: 14px;
   color: #333;
@@ -37,6 +41,7 @@ header > a { color: #fff; }
   width: 100%;
   padding: 0 10px;
   margin-top: 10px;
+  overflow: hidden;
 }
 
 /****************************************
@@ -118,6 +123,10 @@ h3 {
   font-size: 20px;
   line-height: 60px;
   text-align: center;
+  background: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
 }
 
 /* table */
@@ -194,12 +203,17 @@ h3 {
 /* form */
 
 .form-character {
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  line-height: 30px;
 }
 
 .label-block {
   display: block;
 }
+
 
 /****************************************
   footer
