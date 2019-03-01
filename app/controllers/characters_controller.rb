@@ -13,6 +13,8 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+    @leaderskill = Leaderskill.all
+    @ability = Ability.select(:id, :name)
   end
 
   def create
