@@ -13,14 +13,23 @@
   <%= @character.realm.name %>
   <%= @character.property.name %>
   <%= @character.type.name %>
+  <%= @character.guild_battle_score %>
+  <%= @character.rolling_quest_score %>
+</p>
+
+<h2>スキル・アビリティ</h2>
+<p>
   <%= @character.leaderskill.name %>
   <%= @character.skill %>
   <%= @character.skill_description %>
   <%= @character.ability1.name %>
   <%= @character.ability2.name %>
   <%= @character.ability3.name %>
-  <%= @character.guild_battle_score %>
-  <%= @character.rolling_quest_score %>
+</p>
+
+<h2>解説</h2>
+<p>
+  <%= @character.body %>
 </p>
 
 <% if @current_user %>
