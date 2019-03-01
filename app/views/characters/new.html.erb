@@ -9,14 +9,14 @@
 
   <section class="form-character">
     <h3>レア度</h3>
-    <label><%= f.radio_button :rarity, 5 %>星5</label>
+    <label><%= f.radio_button :rarity, 5, checked: true %>星5</label>
     <label><%= f.radio_button :rarity, 4 %>星4</label>
     <label><%= f.radio_button :rarity, 3 %>星3</label>
   </section>
 
   <section class="form-character">
     <h3>属性</h3>
-    <label><%= f.radio_button :property_id, 1 %>炎</label>
+    <label><%= f.radio_button :property_id, 1, checked: true %>炎</label>
     <label><%= f.radio_button :property_id, 2 %>木</label>
     <label><%= f.radio_button :property_id, 3 %>水</label>
     <label><%= f.radio_button :property_id, 4 %>光</label>
@@ -25,7 +25,7 @@
 
   <section class="form-character">
     <h3>レルム</h3>
-    <label><%= f.radio_button :realm_id, 1 %>ヒューマ</label>
+    <label><%= f.radio_button :realm_id, 1, checked: true %>ヒューマ</label>
     <label><%= f.radio_button :realm_id, 2 %>スペア</label>
     <label><%= f.radio_button :realm_id, 3 %>アニマル</label>
     <label><%= f.radio_button :realm_id, 4 %>ブラッド</label>
@@ -36,7 +36,7 @@
 
   <section class="form-character">
     <h3>タイプ</h3>
-    <label><%= f.radio_button :type_id, 1 %>アタッカー</label>
+    <label><%= f.radio_button :type_id, 1, checked: true %>アタッカー</label>
     <label><%= f.radio_button :type_id, 2 %>ヒーロー</label>
     <label><%= f.radio_button :type_id, 3 %>キラー</label>
     <label><%= f.radio_button :type_id, 4 %>ジャマー</label>
