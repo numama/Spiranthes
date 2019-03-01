@@ -8,6 +8,7 @@ body {
   max-width: 100%;
   height: auto;
   font-family: Verdana, sans-serif;
+  font-size: 14px;
   color: #333;
 }
 
@@ -86,17 +87,37 @@ h1 {
   text-align: center;
 }
 
-h3 {
+h2 {
   margin: 10px 0;
   padding-left: 8px ;
-  font-size: 15px;
+  font-size: 16px;
   border-left: 3px solid #95db55;
+}
+
+h3 {
+  margin: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
 }
 
 .character-illust {
   display: block;
   margin: 0 auto;
   width: 60%;
+  max-width: 300px;
+}
+
+.admin-button {
+  display: block;
+  margin: 20px auto 0 auto;
+  width: 80%;
+  height: 60px;
+  border-radius: 1px;
+  border: 1px solid #95bd55;
+  color: #95bd55;
+  font-size: 20px;
+  line-height: 60px;
+  text-align: center;
 }
 
 /* table */
@@ -129,4 +150,8 @@ h3 {
 
 .form-character {
   margin-bottom: 20px;
+}
+
+.label-block {
+  display: block;
 }
