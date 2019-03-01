@@ -13,8 +13,12 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
-    @leaderskill = Leaderskill.all
-    @ability = Ability.select(:id, :name)
+    @leaderskill_array = Leaderskill.all.map do |ls|
+      ["#{ls.name} : #{ls.description}", ls.id]
+    end
+    @ability_array = Ability.select(:id, :name).map do |ability|
+      [ability.name, ability.id]
+    end
   end
 
   def create

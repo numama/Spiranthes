@@ -47,34 +47,48 @@
   <section class="form-character">
     <h3>リーダースキル</h3>
     <label>
-      <%= f.select :leaderskill_id, @leaderskill.map { |ls| ["#{ls.name} : #{ls.description}", ls.id] } %>
+      <%= f.select :leaderskill_id, @leaderskill_array %>
     </label>
   </section>
 
   <section class="form-character">
     <h3>アビリティ</h3>
-    アビ1
-    <%= f.select :ability1, @ability.map { |ability| [ability.name, ability.id] } %>
-    アビ2
-    <%= f.select :ability2, @ability.map { |ability| [ability.name, ability.id] } %>
-    アビ3
-    <%= f.select :ability3, @ability.map { |ability| [ability.name, ability.id] } %>
+    <label class="label-block">
+      アビ1
+      <%= f.select :ability1, @ability_array %>
+    </label>
+    <label class="label-block">
+      アビ2
+      <%= f.select :ability2, @ability_array %>
+    </label>
+    <label class="label-block">
+      アビ3
+      <%= f.select :ability3, @ability_array %>
+    </label>
   </section>
 
   <section class="form-character">
     <h3>スキル</h3>
-    スキル名
-    <%= f.text_field :skill %>
-    説明文
-    <%= f.text_area :skill_description %>
+    <label class="label-block">
+      スキル名
+      <%= f.text_field :skill %>
+    </label>
+    <label class="label-block">
+      説明文
+      <%= f.text_area :skill_description %>
+    </label>
   </section>
 
   <section class="form-character">
     <h3>点数</h3>
-    周回評価
-    <%= f.text_field :rolling_quest_score %>
-    ギルバト評価
-    <%= f.text_field :guild_battle_score %>
+    <label class="label-block">
+      周回評価
+      <%= f.text_field :rolling_quest_score %>
+    </label>
+    <label class="label-block">
+      ギルバト評価
+      <%= f.text_field :guild_battle_score %>
+    </label>
   </section>
 
   <section class="form-character">
