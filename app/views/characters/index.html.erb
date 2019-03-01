@@ -1,5 +1,7 @@
 <h1>ユニット一覧</h1>
 
+<%= link_to "ユニット追加", new_character_path, class: "admin-button" %>
+
 <table class="characters-table">
   <% @characters.each do |character| %>
   <tr>

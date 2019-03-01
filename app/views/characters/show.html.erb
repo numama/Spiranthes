@@ -1,7 +1,7 @@
 <h1><%= @character.name %> の能力・評価</h1>
 
 <% if @current_user %>
-<%= link_to "編集", edit_character_path %>
+<%= link_to "編集", edit_character_path, class: "admin-button" %>
 <% end %>
 
 <%= image_tag "characters/illusts/nil.png", class: "character-illust" %>
@@ -24,5 +24,5 @@
 </p>
 
 <% if @current_user %>
-<%= link_to "編集", edit_character_path %>
+<%= link_to "編集", edit_character_path, class: "admin-button" %>
 <% end %>
