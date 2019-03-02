@@ -3,6 +3,7 @@ class CreateAbilities < ActiveRecord::Migration[5.2]
     create_table :abilities do |t|
       t.string :name
       t.string :symbol
+      t.integer :category
       t.text :description
 
       t.timestamps
