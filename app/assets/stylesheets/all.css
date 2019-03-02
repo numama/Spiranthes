@@ -93,14 +93,14 @@ h1 {
 }
 
 h2 {
-  margin: 10px 0;
+  margin: 20px 0;
   padding-left: 8px ;
   font-size: 16px;
   border-left: 3px solid #95db55;
 }
 
 h3 {
-  margin: 10px 0;
+  margin: 15px 0;
   font-size: 15px;
   font-weight: bold;
 }
@@ -139,7 +139,8 @@ h3 {
   font-size: 12px;
 }
 
-.characters-table td, th {
+.characters-table td,
+.characters-table th {
   min-height: 100px;
   text-align: center;
   border-right: 1px solid #ddd;
@@ -198,6 +199,65 @@ h3 {
   display: block;
   width: 60px;
   height: 60px;
+}
+
+.details-table {
+  margin: 0 auto 20px auto;
+  width: 86%;
+  font-size: 12px;
+}
+
+.details-table tr {
+  border: 1px solid #ddd;
+}
+
+.details-table th,
+.details-table td {
+  height: 25px;
+  font-size: 12px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+}
+
+.details-table td {
+
+}
+
+.details-table th {
+  background: #f2f2f2;
+  font-weight: bold;
+}
+
+.scores-table {
+  margin: 0 auto 20px auto;
+  width: 86%;
+  font-size: 12px;
+}
+
+.scores-table tr {
+  border: 1px solid #ddd;
+}
+
+.scores-table th,
+.scores-table td {
+  width: 50%;
+  height: 25px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+}
+
+.scores-table th {
+  background: #f2f2f2;
+  font-weight: bold;
+}
+
+.scores-table td {
+  height: 70px;
+  font-size: 20px;
+}
+
+.character-body  {
+  font-size: 15px;
 }
 
 /* form */
