@@ -23,7 +23,7 @@ class CharactersController < ApplicationController
     @leaderskill_array = Leaderskill.get_array
     @ability_array = Ability.get_array
     if @character.save
-      redirect_to new_character_path
+      redirect_to character_path(@character)
     else
       render 'new'
     end

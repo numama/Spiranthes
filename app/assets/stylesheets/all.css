@@ -3,10 +3,14 @@
   general
 ****************************************/
 
+html {
+  height: 100%;
+}
+
 body {
   min-width: 300px;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   font-family: Verdana, sans-serif;
   font-size: 14px;
   color: #333;
@@ -35,8 +39,8 @@ header > a { color: #fff; }
 .overall-container {
   display: flex;
   width: 100%;
-  padding: 0 10px;
-  margin-top: 10px;
+  padding: 15px 10px 0 10px;
+  overflow: hidden;
 }
 
 /****************************************
@@ -57,8 +61,8 @@ aside {
 aside > a {
   display: block;
   width: calc(100% / 3);
-  height: 40px;
-  line-height: 40px;
+  height: 45px;
+  line-height: 45px;
   text-align: center;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -80,7 +84,8 @@ main {
 }
 
 h1 {
-  height: 50px;
+  position: relative;
+  min-height: 50px;
   line-height: 50px;
   font-size: 18px;
   border-bottom: 2px solid #95bd55;
@@ -88,14 +93,14 @@ h1 {
 }
 
 h2 {
-  margin: 10px 0;
+  margin: 20px 0;
   padding-left: 8px ;
   font-size: 16px;
   border-left: 3px solid #95db55;
 }
 
 h3 {
-  margin: 10px 0;
+  margin: 15px 0;
   font-size: 15px;
   font-weight: bold;
 }
@@ -118,6 +123,10 @@ h3 {
   font-size: 20px;
   line-height: 60px;
   text-align: center;
+  background: none;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
 }
 
 /* table */
@@ -127,31 +136,175 @@ h3 {
   width: 100%;
   border-top : 1px solid #ddd;
   border-left: 1px solid #ddd;
+  font-size: 12px;
 }
 
-.characters-table td {
-  height: 80px;
+.characters-table td,
+.characters-table th {
+  min-height: 100px;
   text-align: center;
   border-right: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
-  font-size: 14px;
 }
 
 .characters-table tr:nth-child(even) {
-  background: #fcfcfc;
+  background: #f9f9f9;
+}
+
+.characters-table th {
+  height: 40px;
+}
+
+.characters-table td > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: #518daf;
+  font-weight: bold;
+}
+
+.characters-table-icon {
+  padding: 5px;
+  width: 30%;
+}
+
+.characters-table-flame::before,
+.characters-table-leaf::before,
+.characters-table-aqua::before,
+.characters-table-light::before,
+.characters-table-dark::before {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: gray;
+}
+
+.characters-table-flame::before { background: orangered; }
+.characters-table-leaf::before { background: seagreen; }
+.characters-table-aqua::before { background: skyblue; }
+.characters-table-light::before { background: gold; }
+.characters-table-dark::before { background: darkslateblue; }
+
+.characters-table-score {
+  width: 20%;
+  font-size: 15px;
 }
 
 .character-icon-image {
-  margin: 0 auto;
+  margin: 5px auto;
   display: block;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
 }
 
+.details-table {
+  margin: 0 auto 20px auto;
+  width: 86%;
+  font-size: 12px;
+}
+
+.details-table tr {
+  border: 1px solid #ddd;
+}
+
+.details-table th,
+.details-table td {
+  height: 25px;
+  font-size: 12px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+}
+
+.details-table td {
+
+}
+
+.details-table th {
+  background: #f2f2f2;
+  font-weight: bold;
+}
+
+.scores-table {
+  margin: 0 auto 20px auto;
+  width: 86%;
+  font-size: 12px;
+}
+
+.scores-table tr {
+  border: 1px solid #ddd;
+}
+
+.scores-table th,
+.scores-table td {
+  width: 50%;
+  height: 25px;
+  text-align: center;
+  border-right: 1px solid #ddd;
+}
+
+.scores-table th {
+  background: #f2f2f2;
+  font-weight: bold;
+}
+
+.scores-table td {
+  height: 70px;
+  font-size: 20px;
+}
+
+.character-body  {
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+.character-body p {
+  margin-bottom: 15px;
+}
+
+/* form */
+
 .form-character {
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  line-height: 30px;
+}
+
+.form-character-body,
+.form-character-skill-description {
+  resize: none;
+  width: 100%;
+  height: 80px;
+  min-height: 80px;
+}
+
+.form-character-body {
+  resize: vertical;
+  height: 160px;
+  min-height: 160px;
 }
 
 .label-block {
   display: block;
+}
+
+
+/****************************************
+  footer
+****************************************/
+
+footer {
+  margin-top: 50px;
+  width: 100%;
+  height: 40px;
+  font-size: 14px;
+  line-height: 40px;
+  background: #95bd55;
+  text-align: center;
+  color: white;
 }

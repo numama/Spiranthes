@@ -1,4 +1,4 @@
-<h1><%= @character.name %> の能力・評価</h1>
+<h1 id="details"><%= @character.name %> の能力・評価</h1>
 
 <% if @current_user %>
 <%= link_to "編集", edit_character_path, class: "admin-button" %>
@@ -7,21 +7,70 @@
 <%= image_tag "characters/illusts/nil.png", class: "character-illust" %>
 
 <h2>基本情報</h2>
-<p>
-  <%= @character.name %>
-  <%= @character.rarity %>
-  <%= @character.realm.name %>
-  <%= @character.property.name %>
-  <%= @character.type.name %>
-  <%= @character.leaderskill.name %>
-  <%= @character.skill %>
-  <%= @character.skill_description %>
-  <%= @character.ability1.name %>
-  <%= @character.ability2.name %>
-  <%= @character.ability3.name %>
-  <%= @character.guild_battle_score %>
-  <%= @character.rolling_quest_score %>
-</p>
+
+<table class="details-table">
+  <tr>
+    <th>名前</th>
+    <th>レア度</th>
+    <th>属性</th>
+  </tr>
+  <tr>
+    <td><%= @character.name %></td>
+    <td><%= "★" * @character.rarity %></td>
+    <td><%= @character.property.name %></td>
+  </tr>
+  <tr>
+    <th>レルム</th>
+    <th colspan="2">タイプ</th>
+  </tr>
+  <tr>
+    <td><%= @character.realm.name %></td>
+    <td colspan="2"><%= @character.type.name %></td>
+  </tr>
+</table>
+
+<table class="details-table">
+  <tr>
+    <th>リーダースキル</th>
+    <td><%= @character.leaderskill.name %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= @character.leaderskill.description %></td>
+  </tr>
+  <tr>
+    <th>スキル</th>
+    <td><%= @character.skill %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= @character.skill_description %></td>
+  </tr>
+</table>
+
+<table class="details-table">
+  <tr>
+    <th colspan="3">アビリティ</th>
+  </tr>
+  <tr>
+    <td><%= @character.ability1.name %></td>
+    <td><%= @character.ability2.name %></td>
+    <td><%= @character.ability3.name %></td>
+  </tr>
+</table>
+
+<h2>評価</h2>
+<table class="scores-table">
+  <tr>
+    <th>周回評価</th>
+    <th>ギルバト評価</th>
+  </tr>
+  <tr>
+    <td><%= @character.rolling_quest_score %>点</td>
+    <td><%= @character.guild_battle_score %>点</td>
+  </tr>
+</table>
+<div class="character-body">
+  <%= simple_format @character.body %>
+</div>
 
 <% if @current_user %>
 <%= link_to "編集", edit_character_path, class: "admin-button" %>
