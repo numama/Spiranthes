@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   end
 
   # ユニット
-  resources :characters
+  resources :characters do
+    resources: :character_comments, only: [:create]
+  end
 
   # ユーザ
   get 'signup', to: 'users#new'
