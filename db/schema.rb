@@ -42,16 +42,16 @@ ActiveRecord::Schema.define(version: 2019_03_02_154937) do
   create_table "characters", force: :cascade do |t|
     t.string "name"
     t.string "symbol"
-    t.integer "realm_id"
-    t.integer "property_id"
+    t.integer "realm_id", default: 1
+    t.integer "property_id", default: 1
     t.integer "rarity"
-    t.integer "type_id"
-    t.integer "leaderskill_id"
+    t.integer "type_id", default: 1
+    t.integer "leaderskill_id", default: 1
     t.string "skill"
     t.text "skill_description"
-    t.integer "ability1_id"
-    t.integer "ability2_id"
-    t.integer "ability3_id"
+    t.integer "ability1_id", default: 1
+    t.integer "ability2_id", default: 1
+    t.integer "ability3_id", default: 1
     t.integer "guild_battle_score"
     t.integer "rolling_quest_score"
     t.text "body"
