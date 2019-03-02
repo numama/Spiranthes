@@ -1,0 +1,2 @@
+class CharacterComment < ApplicationRecord
+end
