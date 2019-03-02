@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   # ユニット
   resources :characters do
-    resources: :character_comments, only: [:create]
+    resources :character_comments, only: [:create]
   end
 
   # ユーザ
