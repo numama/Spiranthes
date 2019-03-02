@@ -53,10 +53,10 @@ CSV.read("db/import/characters.csv", headers: true).each do |row|
     type_id: row["type_id"],
     rarity: row["rarity"]
   )
-  Status.create(
+  Character_status.create(
     character_id: row["id"],
     hp_max: row["hp_max"],
     attack_max: row["attack_max"],
-    speed_max: row["speed_max"]
+    speed: row["speed"]
   )
 end
