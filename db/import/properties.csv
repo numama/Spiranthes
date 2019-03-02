@@ -1,6 +1,6 @@
-name
-flame
-leaf
-aqua
-light
-dark
+id,name,symbol
+1,火,flame
+2,木,leaf
+3,水,aqua
+4,光,light
+5,闇,dark
