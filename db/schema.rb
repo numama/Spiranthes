@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2019_03_02_154937) do
   create_table "abilities", force: :cascade do |t|
     t.string "name"
     t.string "symbol"
+    t.integer "category"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
