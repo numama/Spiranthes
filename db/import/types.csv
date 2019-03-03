@@ -1,7 +1,7 @@
-name
-アタッカー
-ヒーロー
-キラー
-ジャマー
-ディフェンダー
-サポーター
+id,name,symbol
+1,アタッカー,attacker
+2,ヒーロー,hero
+3,キラー,killer
+4,ジャマー,jammer
+5,ディフェンダー,defender
+6,サポーター,supporter

@@ -7,6 +7,7 @@ class Character < ApplicationRecord
   belongs_to :ability1, class_name: 'Ability', :foreign_key => 'ability1_id'
   belongs_to :ability2, class_name: 'Ability', :foreign_key => 'ability2_id'
   belongs_to :ability3, class_name: 'Ability', :foreign_key => 'ability3_id'
+  has_one :character_status
 
   # validates :name,
   #   presence: true, 
