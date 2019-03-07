@@ -1,4 +1,3 @@
-<%= @character.errors.messages.inspect %>
 <%= form_for @character do |f| %>
 
   <section class="form-character">
@@ -17,7 +16,7 @@
 
   <section class="form-character">
     <h3>属性</h3>
-    <label><%= f.radio_button :property_id, 1, checked: true %>炎</label>
+    <label><%= f.radio_button :property_id, 1, checked: true %>火</label>
     <label><%= f.radio_button :property_id, 2 %>木</label>
     <label><%= f.radio_button :property_id, 3 %>水</label>
     <label><%= f.radio_button :property_id, 4 %>光</label>
@@ -47,22 +46,24 @@
 
   <section class="form-character">
     <h3>リーダースキル</h3>
-    <%= f.select :leaderskill_id, @leaderskill_array, selected: 1 %>
+    <%= f.select :head_leaderskill_id, @head_leaderskill_array %>
+    ユニットの
+    <%= f.select :foot_leaderskill_id, @foot_leaderskill_array %>
   </section>
 
   <section class="form-character">
     <h3>アビリティ</h3>
     <label class="label-block">
       アビ1
-      <%= f.select :ability1_id, @ability_array, selected: 1 %>
+      <%= f.select :ability1_id, @abilities["ability1"] %>
     </label>
     <label class="label-block">
       アビ2
-      <%= f.select :ability2_id, @ability_array, selected: 1 %>
+      <%= f.select :ability2_id, @abilities["ability2"] %>
     </label>
     <label class="label-block">
       アビ3
-      <%= f.select :ability3_id, @ability_array, selected: 1 %>
+      <%= f.select :ability3_id, @abilities["ability3"] %>
     </label>
   </section>
 

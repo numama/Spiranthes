@@ -5,9 +5,11 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
       t.string :symbol
       t.references :realm, default: 1
       t.references :property, default: 1
-      t.integer :rarity
+      t.integer :rarity, default: 5
       t.references :type, default: 1
-      t.references :leaderskill, default: 1
+      t.references :special_leaderskill
+      t.references :head_leaderskill, default: 1
+      t.references :foot_leaderskill, default: 1
       t.string  :skill
       t.text    :skill_description
       t.integer :ability1_id, default: 1

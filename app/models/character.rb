@@ -3,11 +3,13 @@ class Character < ApplicationRecord
   belongs_to :realm
   belongs_to :property
   belongs_to :type
-  belongs_to :leaderskill
+  belongs_to :special_leaderskill, optional: true
+  belongs_to :head_leaderskill
+  belongs_to :foot_leaderskill
   belongs_to :ability1, class_name: 'Ability', :foreign_key => 'ability1_id'
   belongs_to :ability2, class_name: 'Ability', :foreign_key => 'ability2_id'
   belongs_to :ability3, class_name: 'Ability', :foreign_key => 'ability3_id'
-  has_one :character_status
+  has_one :character_status, dependent: :destroy
 
   # validates :name,
   #   presence: true, 
