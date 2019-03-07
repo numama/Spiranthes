@@ -4,7 +4,9 @@ class CharactersController < ApplicationController
   before_action :authentication, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @characters = Character.all
+    @characters = Character.select(
+      :id, :name, :rarity, :property_id, :realm_id, :type_id, :rolling_quest_score, :guild_battle_score
+    )
     # 検索のロジックがあまりにもおそ松
     # これじゃクエリ何回も発行してしまう、もっと良い書き方はないか
     # さらにこういう検索系ってモデルに書くべきだと思う
