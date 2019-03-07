@@ -4,7 +4,11 @@ class CharactersController < ApplicationController
   before_action :authentication, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @characters = Character.all
+    if params[:guild]
+      @characters = Character.all.order(guild_battle_score: :desc)
+    else
+      @characters = Character.all.order(rolling_quest_score: :desc)
+    end
   end
 
   def show
@@ -50,6 +54,14 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
     @character.destroy
     redirect_to characters_path
+  end
+
+  def evaluate
+    if params[:guild]
+      @characters = Character.all.order(guild_battle_score: :desc)
+    else
+      @characters = Character.all.order(rolling_quest_score: :desc)
+    end
   end
 
   private
