@@ -9,7 +9,7 @@ class Character < ApplicationRecord
   belongs_to :ability1, class_name: 'Ability', :foreign_key => 'ability1_id', optional: true
   belongs_to :ability2, class_name: 'Ability', :foreign_key => 'ability2_id', optional: true
   belongs_to :ability3, class_name: 'Ability', :foreign_key => 'ability3_id', optional: true
-  has_one :character_status
+  has_one :character_status, dependent: :destroy
 
   # validates :name,
   #   presence: true, 
