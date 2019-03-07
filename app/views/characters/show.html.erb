@@ -32,11 +32,19 @@
 <table class="details-table">
   <tr>
     <th>リーダースキル</th>
-    <td><%= @character.leaderskill.name %></td>
+  <% if @character.special_leaderskill %>
+    <td><%= character.special_leaderskill %></td>
   </tr>
   <tr>
-    <td colspan="2"><%= @character.leaderskill.description %></td>
+    <td colspan="2"><%= @character.special_leaderskill.description %></td>
   </tr>
+  <% else %>
+    <td><%= "#{@character.head_leaderskill.name}の#{@character.foot_leaderskill.name}" %></td>
+  </tr>
+  <tr>
+    <td colspan="2"><%= "#{@character.head_leaderskill.description}の#{@character.foot_leaderskill.description}" %></td>
+  </tr>
+  <% end %>
   <tr>
     <th>スキル</th>
     <td><%= @character.skill %></td>
