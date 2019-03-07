@@ -5,6 +5,10 @@ class CharactersController < ApplicationController
 
   def index
     @characters = Character.all
+    # 検索のロジックがあまりにもおそ松
+    # これじゃクエリ何回も発行してしまう、もっと良い書き方はないか
+    # さらにこういう検索系ってモデルに書くべきだと思う
+    # rubyはfalseとnil以外すべて真扱いだよ
     cond = params["character"]
     if cond.present?
       @characters = @characters.where(rarity: cond["rarity"].to_i) unless cond["rarity"] == "0"
