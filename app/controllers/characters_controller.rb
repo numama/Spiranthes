@@ -4,10 +4,13 @@ class CharactersController < ApplicationController
   before_action :authentication, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    if params[:guild]
-      @characters = Character.all.order(guild_battle_score: :desc)
-    else
-      @characters = Character.all.order(rolling_quest_score: :desc)
+    @characters = Character.all
+    cond = params["character"]
+    if cond.present?
+      @characters = @characters.where(rarity: cond["rarity"].to_i) unless cond["rarity"] == "0"
+      @characters = @characters.where(property_id: cond["property_id"].to_i) unless cond["property_id"] == "0"
+      @characters = @characters.where(realm_id: cond["realm_id"].to_i) unless cond["realm_id"] == "0"
+      @characters = @characters.where(type_id: cond["type_id"].to_i) unless cond["type_id"] == "0"
     end
   end
 
@@ -58,9 +61,13 @@ class CharactersController < ApplicationController
 
   def evaluate
     if params[:guild]
-      @characters = Character.all.order(guild_battle_score: :desc)
+      @characters = Character.select(
+        :id, :name, :property_id, :realm_id, :rolling_quest_score, :guild_battle_score
+      ).order(guild_battle_score: :desc)
     else
-      @characters = Character.all.order(rolling_quest_score: :desc)
+      @characters = Character.select(
+        :id, :name, :property_id, :realm_id, :rolling_quest_score, :guild_battle_score
+      ).order(rolling_quest_score: :desc)
     end
   end
 
