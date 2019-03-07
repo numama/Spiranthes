@@ -6,6 +6,6 @@ class CreateHeadLeaderskills < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
-    add_index :leaderskills, [:name]
+    add_index :head_leaderskills, [:name]
   end
 end
