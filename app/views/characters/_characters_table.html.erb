@@ -10,22 +10,28 @@
     <th>周回</th>
     <th>ギルバト</th>
   </tr>
-  <% @characters.each do |character| %>
-  <tr>
-    <td class="characters-table-icon">
-      <a href="<%= url_for character_path(character, anchor: "details") %>">
-        <%= image_tag "characters/icons/nil.png", class: "character-icon-image" %>
-        <%= character.name %>
-      </a>
-    </td>
-    <td class="characters-table-<%= character.property.symbol %>"><%= character.property.name %></td>
-    <td><%= character.realm.name %></td>
-    <td class="characters-table-score">
-      <%= character.rolling_quest_score %>点
-    </td>
-    <td class="characters-table-score">
-      <%= character.guild_battle_score %>点
-    </td>
-  </tr>
+  <% if @characters.blank? %>
+    <tr>
+      <td colspan="5">条件に合致するユニットは見つかりません。</td>
+    </tr>
+  <% else %>
+    <% @characters.each do |character| %>
+    <tr>
+      <td class="characters-table-icon">
+        <a href="<%= url_for character_path(character, anchor: "details") %>">
+          <%= image_tag "characters/icons/nil.png", class: "character-icon-image" %>
+          <%= character.name %>
+        </a>
+      </td>
+      <td class="characters-table-<%= character.property.symbol %>"><%= character.property.name %></td>
+      <td><%= character.realm.name %></td>
+      <td class="characters-table-score">
+        <%= character.rolling_quest_score %>点
+      </td>
+      <td class="characters-table-score">
+        <%= character.guild_battle_score %>点
+      </td>
+    </tr>
+    <% end %>
   <% end %>
 </table>
