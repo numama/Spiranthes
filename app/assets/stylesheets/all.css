@@ -169,7 +169,7 @@ h3 {
   width: 30%;
 }
 
-.characters-table-flame::before,
+/*.characters-table-flame::before,
 .characters-table-leaf::before,
 .characters-table-aqua::before,
 .characters-table-light::before,
@@ -177,8 +177,8 @@ h3 {
   content: "";
   display: block;
   margin: 0 auto;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 10px;
   background: gray;
 }
@@ -188,7 +188,7 @@ h3 {
 .characters-table-aqua::before { background: skyblue; }
 .characters-table-light::before { background: gold; }
 .characters-table-dark::before { background: darkslateblue; }
-
+*/
 .characters-table-score {
   width: 20%;
   font-size: 15px;
