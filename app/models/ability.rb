@@ -21,6 +21,7 @@ class Ability < ApplicationRecord
           [ability.name, ability.id]
         end
       end
+      return result
     else
       []
     end
