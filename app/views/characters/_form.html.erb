@@ -17,7 +17,7 @@
 
   <section class="form-character">
     <h3>属性</h3>
-    <label><%= f.radio_button :property_id, 1, checked: true %>炎</label>
+    <label><%= f.radio_button :property_id, 1, checked: true %>火</label>
     <label><%= f.radio_button :property_id, 2 %>木</label>
     <label><%= f.radio_button :property_id, 3 %>水</label>
     <label><%= f.radio_button :property_id, 4 %>光</label>
@@ -47,7 +47,9 @@
 
   <section class="form-character">
     <h3>リーダースキル</h3>
-    <%= f.select :leaderskill_id, @leaderskill_array, selected: 1 %>
+    <%= f.select :head_leaderskill_id, @head_leaderskill_array, selected: 1 %>
+    ユニットの
+    <%= f.select :foot_leaderskill_id, @foot_leaderskill_array, selected: 1 %>
   </section>
 
   <section class="form-character">
