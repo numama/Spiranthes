@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_02_214225) do
+ActiveRecord::Schema.define(version: 2019_03_07_092148) do
 
   create_table "abilities", force: :cascade do |t|
     t.string "name"
@@ -54,23 +54,27 @@ ActiveRecord::Schema.define(version: 2019_03_02_214225) do
     t.string "symbol"
     t.integer "realm_id", default: 1
     t.integer "property_id", default: 1
-    t.integer "rarity"
+    t.integer "rarity", default: 5
     t.integer "type_id", default: 1
-    t.integer "leaderskill_id", default: 1
+    t.integer "special_leaderskill_id"
+    t.integer "head_leaderskill_id"
+    t.integer "foot_leaderskill_id"
     t.string "skill"
     t.text "skill_description"
-    t.integer "ability1_id", default: 1
-    t.integer "ability2_id", default: 1
-    t.integer "ability3_id", default: 1
+    t.integer "ability1_id"
+    t.integer "ability2_id"
+    t.integer "ability3_id"
     t.integer "guild_battle_score"
     t.integer "rolling_quest_score"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["leaderskill_id"], name: "index_characters_on_leaderskill_id"
+    t.index ["foot_leaderskill_id"], name: "index_characters_on_foot_leaderskill_id"
+    t.index ["head_leaderskill_id"], name: "index_characters_on_head_leaderskill_id"
     t.index ["name", "symbol"], name: "index_characters_on_name_and_symbol"
     t.index ["property_id"], name: "index_characters_on_property_id"
     t.index ["realm_id"], name: "index_characters_on_realm_id"
+    t.index ["special_leaderskill_id"], name: "index_characters_on_special_leaderskill_id"
     t.index ["type_id"], name: "index_characters_on_type_id"
   end
 
@@ -82,13 +86,20 @@ ActiveRecord::Schema.define(version: 2019_03_02_214225) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
-  create_table "leaderskills", force: :cascade do |t|
+  create_table "foot_leaderskills", force: :cascade do |t|
     t.string "name"
-    t.string "symbol"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name", "symbol"], name: "index_leaderskills_on_name_and_symbol"
+    t.index ["name"], name: "index_foot_leaderskills_on_name"
+  end
+
+  create_table "head_leaderskills", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_head_leaderskills_on_name"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -110,6 +121,14 @@ ActiveRecord::Schema.define(version: 2019_03_02_214225) do
     t.string "symbol"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "special_leaderskills", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_special_leaderskills_on_name"
   end
 
   create_table "types", force: :cascade do |t|
