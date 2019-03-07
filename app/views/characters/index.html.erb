@@ -3,40 +3,40 @@
 <%= form_tag(url_for(characters_path), method: "get") do %>
   
   <div>
-  <label><%= radio_button("character", "reality", 0) %>指定なし</label>
-  <label><%= radio_button("character", "reality", 5) %>5</label>
-  <label><%= radio_button("character", "reality", 4) %>4</label>
-  <label><%= radio_button("character", "reality", 3) %>3</label>
+  <label><%= radio_button "character", "rarity", 0, checked: true %>指定なし</label>
+  <label><%= radio_button "character", "rarity", 5 %>5</label>
+  <label><%= radio_button "character", "rarity", 4 %>4</label>
+  <label><%= radio_button "character", "rarity", 3 %>3</label>
   </div>
 
   <div>
-  <label><%= radio_button("character", "property_id", 0) %>指定なし</label>
-  <label><%= radio_button("character", "property_id", 1) %>火</label>
-  <label><%= radio_button("character", "property_id", 2) %>水</label>
-  <label><%= radio_button("character", "property_id", 3) %>木</label>
-  <label><%= radio_button("character", "property_id", 4) %>光</label>
-  <label><%= radio_button("character", "property_id", 5) %>闇</label>
+  <label><%= radio_button "character", "property_id", 0, checked: true %>指定なし</label>
+  <label><%= radio_button "character", "property_id", 1 %>火</label>
+  <label><%= radio_button "character", "property_id", 2 %>水</label>
+  <label><%= radio_button "character", "property_id", 3 %>木</label>
+  <label><%= radio_button "character", "property_id", 4 %>光</label>
+  <label><%= radio_button "character", "property_id", 5 %>闇</label>
   </div>
 
   <div>
-  <label><%= radio_button("character", "realm_id", 0) %>指定なし</label>
-  <label><%= radio_button("character", "realm_id", 1) %>ヒューマ</label>
-  <label><%= radio_button("character", "realm_id", 2) %>スペア</label>
-  <label><%= radio_button("character", "realm_id", 3) %>アニマル</label>
-  <label><%= radio_button("character", "realm_id", 4) %>ブラッド</label>
-  <label><%= radio_button("character", "realm_id", 5) %>スカイ</label>
-  <label><%= radio_button("character", "realm_id", 6) %>ヘル</label>
-  <label><%= radio_button("character", "realm_id", 7) %>アンノウン</label>
+  <label><%= radio_button "character", "realm_id", 0, checked: true %>指定なし</label>
+  <label><%= radio_button "character", "realm_id", 1 %>ヒューマ</label>
+  <label><%= radio_button "character", "realm_id", 2 %>スペア</label>
+  <label><%= radio_button "character", "realm_id", 3 %>アニマル</label>
+  <label><%= radio_button "character", "realm_id", 4 %>ブラッド</label>
+  <label><%= radio_button "character", "realm_id", 5 %>スカイ</label>
+  <label><%= radio_button "character", "realm_id", 6 %>ヘル</label>
+  <label><%= radio_button "character", "realm_id", 7 %>アンノウン</label>
   </div>
 
   <div>
-  <label><%= radio_button("character", "type_id", 0) %>指定なし</label>
-  <label><%= radio_button("character", "type_id", 1) %>アタッカー</label>
-  <label><%= radio_button("character", "type_id", 2) %>ヒーロー</label>
-  <label><%= radio_button("character", "type_id", 3) %>キラー</label>
-  <label><%= radio_button("character", "type_id", 4) %>ジャマー</label>
-  <label><%= radio_button("character", "type_id", 5) %>ディフェンダー</label>
-  <label><%= radio_button("character", "type_id", 6) %>サポーター</label>
+  <label><%= radio_button "character", "type_id", 0, checked: true %>指定なし</label>
+  <label><%= radio_button "character", "type_id", 1 %>アタッカー</label>
+  <label><%= radio_button "character", "type_id", 2 %>ヒーロー</label>
+  <label><%= radio_button "character", "type_id", 3 %>キラー</label>
+  <label><%= radio_button "character", "type_id", 4 %>ジャマー</label>
+  <label><%= radio_button "character", "type_id", 5 %>ディフェンダー</label>
+  <label><%= radio_button "character", "type_id", 6 %>サポーター</label>
   </div>
 
   <%= submit_tag("検索") %>
