@@ -3,35 +3,4 @@
 <%= link_to "周回評価", characters_path %>
 <%= link_to "ギルバト評価", url_for(characters_path) + "?guild=1" %>
 
-
-<% if @current_user %>
-<%= link_to "ユニット追加", new_character_path, class: "admin-button" %>
-<% end %>
-
-<table class="characters-table">
-  <tr class="characters-table-header">
-    <th>ユニット</th>
-    <th>属性</th>
-    <th>レルム</th>
-    <th>周回</th>
-    <th>ギルバト</th>
-  </tr>
-  <% @characters.each do |character| %>
-  <tr>
-    <td class="characters-table-icon">
-      <a href="<%= url_for character_path(character, anchor: "details") %>">
-        <%= image_tag "characters/icons/nil.png", class: "character-icon-image" %>
-        <%= character.name %>
-      </a>
-    </td>
-    <td class="characters-table-<%= character.property.symbol %>"><%= character.property.name %></td>
-    <td><%= character.realm.name %></td>
-    <td class="characters-table-score">
-      <%= character.rolling_quest_score %>点
-    </td>
-    <td class="characters-table-score">
-      <%= character.guild_battle_score %>点
-    </td>
-  </tr>
-  <% end %>
-</table>
+<%= render "characters_table" %>
