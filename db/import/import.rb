@@ -24,11 +24,26 @@ CSV.read("db/import/types.csv", headers: true).each do |row|
   )
 end
 
-# leaderskills
-CSV.read("db/import/leaderskills.csv", headers: true).each do |row|
-  Leaderskill.create(
+# special leaderskills
+CSV.read("db/import/special_leaderskills.csv", headers: true).each do |row|
+  SpecialLeaderskill.create(
     name: row["name"],
-    symbol: row["symbol"],
+    description: row["description"]
+  )
+end
+
+# head leaderskills
+CSV.read("db/import/head_leaderskills.csv", headers: true).each do |row|
+  HeadLeaderskill.create(
+    name: row["name"],
+    description: row["description"]
+  )
+end
+
+# foot leaderskills
+CSV.read("db/import/foot_leaderskills.csv", headers: true).each do |row|
+  FootLeaderskill.create(
+    name: row["name"],
     description: row["description"]
   )
 end
