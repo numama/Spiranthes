@@ -8,13 +8,13 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
       t.integer :rarity, default: 5
       t.references :type, default: 1
       t.references :special_leaderskill
-      t.references :head_leaderskill
-      t.references :foot_leaderskill
+      t.references :head_leaderskill, default: 1
+      t.references :foot_leaderskill, default: 1
       t.string  :skill
       t.text    :skill_description
-      t.integer :ability1_id
-      t.integer :ability2_id
-      t.integer :ability3_id
+      t.integer :ability1_id, default: 1
+      t.integer :ability2_id, default: 1
+      t.integer :ability3_id, default: 1
       t.integer :guild_battle_score
       t.integer :rolling_quest_score
       t.text    :body
