@@ -57,13 +57,13 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
     t.integer "rarity", default: 5
     t.integer "type_id", default: 1
     t.integer "special_leaderskill_id"
-    t.integer "head_leaderskill_id"
-    t.integer "foot_leaderskill_id"
+    t.integer "head_leaderskill_id", default: 1
+    t.integer "foot_leaderskill_id", default: 1
     t.string "skill"
     t.text "skill_description"
-    t.integer "ability1_id"
-    t.integer "ability2_id"
-    t.integer "ability3_id"
+    t.integer "ability1_id", default: 1
+    t.integer "ability2_id", default: 1
+    t.integer "ability3_id", default: 1
     t.integer "guild_battle_score"
     t.integer "rolling_quest_score"
     t.text "body"
