@@ -47,24 +47,24 @@
 
   <section class="form-character">
     <h3>リーダースキル</h3>
-    <%= f.select :head_leaderskill_id, @head_leaderskill_array, selected: 1 %>
+    <%= f.select :head_leaderskill_id, @head_leaderskill_array %>
     ユニットの
-    <%= f.select :foot_leaderskill_id, @foot_leaderskill_array, selected: 1 %>
+    <%= f.select :foot_leaderskill_id, @foot_leaderskill_array %>
   </section>
 
   <section class="form-character">
     <h3>アビリティ</h3>
     <label class="label-block">
       アビ1
-      <%= f.select :ability1_id, @ability_array, selected: 1 %>
+      <%= f.select :ability1_id, @ability_array %>
     </label>
     <label class="label-block">
       アビ2
-      <%= f.select :ability2_id, @ability_array, selected: 1 %>
+      <%= f.select :ability2_id, @ability_array %>
     </label>
     <label class="label-block">
       アビ3
-      <%= f.select :ability3_id, @ability_array, selected: 1 %>
+      <%= f.select :ability3_id, @ability_array %>
     </label>
   </section>
 
