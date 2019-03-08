@@ -6,7 +6,7 @@ class CharactersController < ApplicationController
   def index
     @characters = Character.select(
       :id, :name, :rarity, :property_id, :realm_id, :type_id, :rolling_quest_score, :guild_battle_score
-    )
+    ).includes(:property, :realm, :type)
     # 検索のロジックがあまりにもおそ松
     # これじゃクエリ何回も発行してしまう、もっと良い書き方はないか
     # さらにこういう検索系ってモデルに書くべきだと思う
@@ -69,11 +69,11 @@ class CharactersController < ApplicationController
     if params[:guild]
       @characters = Character.select(
         :id, :name, :property_id, :realm_id, :rolling_quest_score, :guild_battle_score
-      ).order(guild_battle_score: :desc)
+      ).order(guild_battle_score: :desc).includes(:property, :realm)
     else
       @characters = Character.select(
         :id, :name, :property_id, :realm_id, :rolling_quest_score, :guild_battle_score
-      ).order(rolling_quest_score: :desc)
+      ).order(rolling_quest_score: :desc).includes(:property, :realm)
     end
   end
 
