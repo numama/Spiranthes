@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :characters do
     resources :character_comments, only: [:create]
   end
+  get 'evaluate', to: 'characters#evaluate'
 
   # ユーザ
   get 'signup', to: 'users#new'

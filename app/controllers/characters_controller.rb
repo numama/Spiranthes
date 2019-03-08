@@ -4,7 +4,20 @@ class CharactersController < ApplicationController
   before_action :authentication, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @characters = Character.all
+    @characters = Character.select(
+      :id, :name, :rarity, :property_id, :realm_id, :type_id, :rolling_quest_score, :guild_battle_score
+    ).includes(:property, :realm, :type)
+    # 検索のロジックがあまりにもおそ松
+    # これじゃクエリ何回も発行してしまう、もっと良い書き方はないか
+    # さらにこういう検索系ってモデルに書くべきだと思う
+    # rubyはfalseとnil以外すべて真扱いだよ
+    cond = params["character"]
+    if cond.present?
+      @characters = @characters.where(rarity: cond["rarity"].to_i) unless cond["rarity"] == "0"
+      @characters = @characters.where(property_id: cond["property_id"].to_i) unless cond["property_id"] == "0"
+      @characters = @characters.where(realm_id: cond["realm_id"].to_i) unless cond["realm_id"] == "0"
+      @characters = @characters.where(type_id: cond["type_id"].to_i) unless cond["type_id"] == "0"
+    end
   end
 
   def show
@@ -50,6 +63,18 @@ class CharactersController < ApplicationController
     @character = Character.find(params[:id])
     @character.destroy
     redirect_to characters_path
+  end
+
+  def evaluate
+    if params[:guild]
+      @characters = Character.select(
+        :id, :name, :property_id, :realm_id, :rolling_quest_score, :guild_battle_score
+      ).order(guild_battle_score: :desc).includes(:property, :realm)
+    else
+      @characters = Character.select(
+        :id, :name, :property_id, :realm_id, :rolling_quest_score, :guild_battle_score
+      ).order(rolling_quest_score: :desc).includes(:property, :realm)
+    end
   end
 
   private
