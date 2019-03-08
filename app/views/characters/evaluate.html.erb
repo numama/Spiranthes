@@ -1,6 +1,11 @@
 <h1>ユニット評価</h1>
-
-<%= link_to "周回評価", {controller: :characters, action: :evaluate} %>
-<%= link_to "ギルバト評価", url_for({controller: :characters, action: :evaluate}) + "?guild=1" %>
-
+<div class="button-wrapper">
+<% if params["guild"] == "1" %>
+<%= link_to "周回評価", {controller: :characters, action: :evaluate}, class: "evaluate-page-button" %>
+<%= link_to "ギルバト評価", url_for({controller: :characters, action: :evaluate}) + "?guild=1", class: "evaluate-page-button-active" %>
+<% else %>
+<%= link_to "周回評価", {controller: :characters, action: :evaluate}, class: "evaluate-page-button-active" %>
+<%= link_to "ギルバト評価", url_for({controller: :characters, action: :evaluate}) + "?guild=1", class: "evaluate-page-button" %>
+<% end %>
+</div>
 <%= render 'characters_table' %>

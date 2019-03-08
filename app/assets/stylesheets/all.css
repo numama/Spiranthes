@@ -293,6 +293,27 @@ h3 {
   display: block;
 }
 
+.button-wrapper {
+  display: flex;
+  margin: 40px auto 0 auto;
+  width: 70%;
+  height: 30px;
+}
+
+.evaluate-page-button,
+.evaluate-page-button-active {
+  display: block;
+  width: 50%;
+  line-height: 30px;
+  border: 1px solid #95bd55;
+  text-align: center;
+}
+
+.evaluate-page-button-active {
+  background: #95bd55;
+  color: white;
+}
+
 
 /****************************************
   footer
