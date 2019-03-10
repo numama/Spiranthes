@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   end
   get 'evaluate', to: 'characters#evaluate'
 
+  # アビリティ
+  resources :abilities, only: [:show]
+
   # ユーザ
   get 'signup', to: 'users#new'
   post 'users', to: 'users#create'
