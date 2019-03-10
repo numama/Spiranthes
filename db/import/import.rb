@@ -83,10 +83,4 @@ CSV.read("db/import/data/characters.csv", headers: true).each do |row|
     skill_point: row["skill_point"],
     skill_description: row["skill_description"]
   )
-  CharacterStatus.create(
-    character_id: row["id"],
-    hp_max: row["hp_max"],
-    attack_max: row["attack_max"],
-    speed: row["speed"]
-  )
 end
