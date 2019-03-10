@@ -59,9 +59,9 @@
     <th colspan="3">アビリティ</th>
   </tr>
   <tr>
-    <td><%= @character.ability1.name %></td>
-    <td><%= @character.ability2.name %></td>
-    <td><%= @character.ability3.name %></td>
+    <td><%= link_to @character.ability1.name, ability_path(@character.ability1.id) %></td>
+    <td><%= link_to @character.ability2.name, ability_path(@character.ability2.id) %></td>
+    <td><%= link_to @character.ability3.name, ability_path(@character.ability3.id) %></td>
   </tr>
 </table>
 
