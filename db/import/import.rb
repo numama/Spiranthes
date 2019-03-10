@@ -72,11 +72,16 @@ Character.all.destroy_all unless Character.first
 CSV.read("db/import/data/characters.csv", headers: true).each do |row|
   Character.create(
     name: row["name"],
-    symbol: row["symbol"],
     property_id: row["property_id"],
     realm_id: row["realm_id"],
     type_id: row["type_id"],
-    rarity: row["rarity"]
+    rarity: row["rarity"],
+    from: row["from"],
+    motion: row["motion"],
+    attack_count: row["attack_count"],
+    skill_name: row["skill_name"],
+    skill_point: row["skill_point"],
+    skill_description: row["skill_description"]
   )
   CharacterStatus.create(
     character_id: row["id"],
