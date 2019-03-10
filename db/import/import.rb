@@ -59,9 +59,11 @@ Ability.all.destroy_all unless Ability.first
 CSV.read("db/import/data/abilities.csv", headers: true).each do |row|
   Ability.create(
     name: row["name"],
-    symbol: row["symbol"],
     category: row["category"],
-    description: row["description"]
+    description: row["description"],
+    level1: row["level1"],
+    level2: row["level2"],
+    level3: row["level3"]
   )
 end
 
