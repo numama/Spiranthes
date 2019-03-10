@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
-    t.string "symbol"
     t.integer "realm_id", default: 1
     t.integer "property_id", default: 1
     t.integer "rarity", default: 5
@@ -61,19 +60,24 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
     t.integer "special_leaderskill_id"
     t.integer "head_leaderskill_id", default: 1
     t.integer "foot_leaderskill_id", default: 1
-    t.string "skill"
-    t.text "skill_description"
+    t.string "skill_name", default: "-"
+    t.integer "skill_point"
+    t.text "skill_description", default: "-"
     t.integer "ability1_id", default: 1
     t.integer "ability2_id", default: 1
     t.integer "ability3_id", default: 1
-    t.integer "guild_battle_score"
-    t.integer "rolling_quest_score"
+    t.string "from"
+    t.integer "motion"
+    t.integer "attack_count"
+    t.integer "guild_battle_score", default: 0
+    t.integer "rolling_quest_score", default: 0
+    t.integer "arena_score", default: 0
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["foot_leaderskill_id"], name: "index_characters_on_foot_leaderskill_id"
     t.index ["head_leaderskill_id"], name: "index_characters_on_head_leaderskill_id"
-    t.index ["name", "symbol"], name: "index_characters_on_name_and_symbol"
+    t.index ["name", "from"], name: "index_characters_on_name_and_from"
     t.index ["property_id"], name: "index_characters_on_property_id"
     t.index ["realm_id"], name: "index_characters_on_realm_id"
     t.index ["special_leaderskill_id"], name: "index_characters_on_special_leaderskill_id"
