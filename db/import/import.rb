@@ -1,15 +1,17 @@
 require "csv"
 
 # realm
-CSV.read("db/import/seeds/realms.csv", headers: true).each do |row|
+Realm.all.destroy_all unless Realm.first
+CSV.read("db/import/data/realms.csv", headers: true).each do |row|
   Realm.create(
     name: row["name"],
     symbol: row["symbol"]
   )
 end
 
-# propaty
-CSV.read("db/import/seeds/properties.csv", headers: true).each do |row|
+# property
+Property.all.destroy_all unless Property.first
+CSV.read("db/import/data/properties.csv", headers: true).each do |row|
   Property.create(
     name: row["name"],
     symbol: row["symbol"]
@@ -17,7 +19,8 @@ CSV.read("db/import/seeds/properties.csv", headers: true).each do |row|
 end
 
 # type
-CSV.read("db/import/seeds/types.csv", headers: true).each do |row|
+Type.all.destroy_all unless Type.first
+CSV.read("db/import/data/types.csv", headers: true).each do |row|
   Type.create(
     name: row["name"],
     symbol: row["symbol"]
@@ -25,7 +28,8 @@ CSV.read("db/import/seeds/types.csv", headers: true).each do |row|
 end
 
 # special leaderskills
-CSV.read("db/import/seeds/special_leaderskills.csv", headers: true).each do |row|
+SpecialLeaderskill.all.destroy_all unless SpecialLeaderskill.first
+CSV.read("db/import/data/special_leaderskills.csv", headers: true).each do |row|
   SpecialLeaderskill.create(
     name: row["name"],
     description: row["description"]
@@ -33,7 +37,8 @@ CSV.read("db/import/seeds/special_leaderskills.csv", headers: true).each do |row
 end
 
 # head leaderskills
-CSV.read("db/import/seeds/head_leaderskills.csv", headers: true).each do |row|
+HeadLeaderskill.all.destroy_all unless HeadLeaderskill.first
+CSV.read("db/import/data/head_leaderskills.csv", headers: true).each do |row|
   HeadLeaderskill.create(
     name: row["name"],
     description: row["description"]
@@ -41,7 +46,8 @@ CSV.read("db/import/seeds/head_leaderskills.csv", headers: true).each do |row|
 end
 
 # foot leaderskills
-CSV.read("db/import/seeds/foot_leaderskills.csv", headers: true).each do |row|
+FootLeaderskill.all.destroy_all unless FootLeaderskill.first
+CSV.read("db/import/data/foot_leaderskills.csv", headers: true).each do |row|
   FootLeaderskill.create(
     name: row["name"],
     description: row["description"]
@@ -49,17 +55,21 @@ CSV.read("db/import/seeds/foot_leaderskills.csv", headers: true).each do |row|
 end
 
 # abilities
-CSV.read("db/import/seeds/abilities.csv", headers: true).each do |row|
+Ability.all.destroy_all unless Ability.first
+CSV.read("db/import/data/abilities.csv", headers: true).each do |row|
   Ability.create(
     name: row["name"],
-    symbol: row["symbol"],
     category: row["category"],
-    description: row["description"]
+    description: row["description"],
+    level1: row["level1"],
+    level2: row["level2"],
+    level3: row["level3"]
   )
 end
 
 # characters
-CSV.read("db/import/seeds/characters.csv", headers: true).each do |row|
+Character.all.destroy_all unless Character.first
+CSV.read("db/import/data/characters.csv", headers: true).each do |row|
   Character.create(
     name: row["name"],
     symbol: row["symbol"],

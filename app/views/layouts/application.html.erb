@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Spiranthes</title>
+    <title>
+      <% if @title.present? %>
+        <%= @title %>
+      <% else %>
+        Spiranthes
+      <% end %>
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,23 +19,23 @@
 
   <body>
     <header>
-      <a href="/">ラストピリオド攻略</a>
+      <a href="/">Spiranthes</a>
     </header>
     <div class="overall-container">
       <main>
       <%= yield %>
       </main>
       <aside>
-        <a href="/">リセマラ</a>
         <%= link_to "ユニット評価", {controller: :characters, action: :evaluate} %>
-        <%= link_to "ユニットを探す", characters_path %>
-        <a href="/">初心者ガイド</a>
+        <%= link_to "ユニット一覧", characters_path %>
+        <a href="/">詳細検索</a>
         <a href="/">ギルバト攻略</a>
+        <a href="/">当サイトについて</a>
         <a href="/">Q & A</a>
       </aside>
     </div>
     <footer>
-      © 2019 kouchou
+      © 2019 numama
     </footer>
   </body>
 </html>
