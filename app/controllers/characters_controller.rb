@@ -21,7 +21,9 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.find(params[:id])
+    @character = Character.includes(
+      :realm, :property, :type, :ability1, :ability2, :ability2, :head_leaderskill, :foot_leaderskill
+    ).find_by(params[:id])
   end
 
   def new

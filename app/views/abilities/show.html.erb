@@ -1,0 +1,20 @@
+<h1><%= @ability.name %>（アビリティ）</h1>
+
+<h2>アビリティ詳細</h2>
+<table>
+  <tr>
+    <th>レベル1</th>
+    <td><%= "#{@ability.description} #{@ability.level1}" %></td>
+  </tr>
+  <tr>
+    <th>レベル2</th>
+    <td><%= "#{@ability.description} #{@ability.level1}" %></td>
+  </tr>
+  <tr>
+    <th>レベル3</th>
+    <td><%= "#{@ability.description} #{@ability.level1}" %></td>
+  </tr>
+</table>
+
+<h2><%= @ability.name %>を持つユニット</h2>
+<%= render "shared/characters_table" %>

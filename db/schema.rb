@@ -14,12 +14,14 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
 
   create_table "abilities", force: :cascade do |t|
     t.string "name"
-    t.string "symbol"
     t.integer "category"
     t.text "description"
+    t.string "level1"
+    t.string "level2"
+    t.string "level3"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["name", "symbol"], name: "index_abilities_on_name_and_symbol"
+    t.index ["name", "category"], name: "index_abilities_on_name_and_category"
   end
 
   create_table "character_comments", force: :cascade do |t|

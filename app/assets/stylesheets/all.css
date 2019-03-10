@@ -16,6 +16,10 @@ body {
   color: #333;
 }
 
+a {
+  color: #518daf;
+}
+
 /****************************************
   header
 ****************************************/
@@ -68,6 +72,7 @@ aside > a {
   border-bottom: 1px solid #ddd;
   overflow: hidden;
   font-size: 13px;
+  color: #333;
 }
 
 aside > a:nth-child(3n) {
