@@ -47,4 +47,28 @@ class Character < ApplicationRecord
   #   length: { in: 1..3 }, 
   #   numericality: true
 
+  # characters_tableに表示する情報を引き出すメソッド
+  def self.select_for_table
+    self.select(
+      :id,
+      :name,
+      :rarity,
+      :property_id,
+      :realm_id,
+      :type_id,
+      :rolling_quest_score,
+      :guild_battle_score,
+      :is_icon
+    ).includes(:property, :realm, :type)
+  end
+
+  # 詳細表示に必要なデータを引き出すメソッド
+  def self.select_for_show(id)
+    self.includes(
+      :realm, :property, :type, :ability1, :ability2, :ability2, :head_leaderskill, :foot_leaderskill
+    ).find(id)
+  end
+  
+
+
 end

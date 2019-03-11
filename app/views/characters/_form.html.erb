@@ -1,3 +1,4 @@
+<%= @character.errors.messages.inspect %>
 <%= form_for @character do |f| %>
 
   <section class="form-character">
@@ -76,6 +77,33 @@
     <label class="label-block">
       説明文
       <%= f.text_area :skill_description, class: "form-character-skill-description" %>
+    </label>
+  </section>
+
+  <section class="form-character">
+    <h3>その他</h3>
+    <label class="label-block">
+      入手方法
+      <%= f.text_field :from %>
+    </label>
+    <label class="label-block">
+      モーション
+      <%= f.text_field :motion %>
+    </label>
+    <label class="label-block">
+      攻撃回数
+      <%= f.text_field :attack_count %>
+    </label>
+  </section>
+
+  <section class="form-character">
+    <label class="lebel-block">
+      <%= f.check_box :is_icon, {checked_value: true, unchecked_value: false} %>
+      アイコン画像
+    </label>
+    <label class="lebel-block">
+      <%= f.check_box :is_illust, {checked_value: true, unchecked_value: false} %>
+      立ち絵画像
     </label>
   </section>
 

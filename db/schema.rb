@@ -69,12 +69,14 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
     t.integer "ability2_id", default: 1
     t.integer "ability3_id", default: 1
     t.string "from"
-    t.integer "motion"
+    t.string "motion"
     t.integer "attack_count"
     t.integer "guild_battle_score", default: 0
     t.integer "rolling_quest_score", default: 0
     t.integer "arena_score", default: 0
     t.text "body"
+    t.boolean "is_icon", default: false, null: false
+    t.boolean "is_illust", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["foot_leaderskill_id"], name: "index_characters_on_foot_leaderskill_id"
@@ -97,6 +99,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
   create_table "foot_leaderskills", force: :cascade do |t|
     t.string "name"
     t.text "description"
+    t.text "original_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_foot_leaderskills_on_name"

@@ -4,7 +4,11 @@
 <%= link_to "編集", edit_character_path, class: "admin-button" %>
 <% end %>
 
-<%= image_tag "characters/illusts/nil.png", class: "character-illust" %>
+<% if @character.is_illust %>
+  <% image_tag "characters/illusts/illust#{character.id}.png", class: "character-illust" %>
+<% else %>
+  <%= image_tag "characters/illusts/default.png", class: "character-illust" %>
+<% end %>
 
 <h2>基本情報</h2>
 
