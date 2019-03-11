@@ -2,9 +2,9 @@ class FootLeaderskill < ApplicationRecord
   has_many :characters
 
   def self.get_array
-    if  items = self.select(:id, :description)
+    if  items = self.select(:id, :original_description)
       items.all.map do |ls|
-        [ls.description, ls.id]
+        [ls.original_description, ls.id]
       end
     else
       []

@@ -44,7 +44,8 @@ end
 CSV.read("db/import/data/foot_leaderskills.csv", headers: true).each do |row|
   FootLeaderskill.create!(
     name: row["name"],
-    description: row["description"]
+    description: row["description"],
+    original_description: row["original_description"]
   )
 end
 
