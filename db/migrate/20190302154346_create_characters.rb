@@ -16,7 +16,7 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
       t.integer    :ability2_id, default: 1
       t.integer    :ability3_id, default: 1
       t.string     :from
-      t.integer    :motion
+      t.string     :motion
       t.integer    :attack_count
       t.integer    :guild_battle_score, default: 0
       t.integer    :rolling_quest_score, default: 0
