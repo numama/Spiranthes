@@ -62,9 +62,9 @@ class CharactersController < ApplicationController
 
   def evaluate
     if params[:guild]
-      @characters = Character.select_for_table.order(guild_battle_score: :desc)
+      @characters = Character.select_for_table.order(guild_battle_score: :desc).limit(30)
     else
-      @characters = Character.select_for_table.order(rolling_quest_score: :desc)
+      @characters = Character.select_for_table.order(rolling_quest_score: :desc).limit(30)
     end
   end
 
@@ -86,6 +86,7 @@ class CharactersController < ApplicationController
         :head_leaderskill_id,
         :foot_leaderskill_id,
         :skill,
+        :skill_point,
         :skill_description,
         :ability1_id,
         :ability2_id,
