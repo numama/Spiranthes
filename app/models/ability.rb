@@ -14,7 +14,7 @@ class Ability < ApplicationRecord
   end
 
   def self.get_array_by_category
-    if items = self.select(:id, :name, :category)
+    if items = self.select(:id, :name, :category).order(:id)
       result = {}
       (1..3).each do |n|
         result["ability#{n}"] = items.where(category: n).map do |ability|
