@@ -4,9 +4,7 @@ class CharactersController < ApplicationController
   before_action :authentication, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @characters = Character.select(
-      :id, :name, :rarity, :property_id, :realm_id, :type_id, :rolling_quest_score, :guild_battle_score
-    ).includes(:property, :realm, :type)
+    @characters = Character.select_for_table
     # 検索のロジックがあまりにもおそ松
     # これじゃクエリ何回も発行してしまう、もっと良い書き方はないか
     # さらにこういう検索系ってモデルに書くべきだと思う
@@ -22,7 +20,7 @@ class CharactersController < ApplicationController
 
   def show
     @character = Character.includes(
-      :realm, :property, :type, :ability1, :ability2, :ability2, :head_leaderskill, :foot_leaderskill
+      :realm, :property, :type, :ability1, :ability2, :ability2, :head_leaderskill, :foot_leaderskill, :is_icon, :is_illust
     ).find(params[:id])
   end
 
@@ -69,13 +67,9 @@ class CharactersController < ApplicationController
 
   def evaluate
     if params[:guild]
-      @characters = Character.select(
-        :id, :name, :property_id, :realm_id, :rolling_quest_score, :guild_battle_score
-      ).order(guild_battle_score: :desc).includes(:property, :realm)
+      @characters = Character.select_for_table.order(guild_battle_score: :desc)
     else
-      @characters = Character.select(
-        :id, :name, :property_id, :realm_id, :rolling_quest_score, :guild_battle_score
-      ).order(rolling_quest_score: :desc).includes(:property, :realm)
+      @characters = Character.select_for_table.order(rolling_quest_score: :desc)
     end
   end
 
