@@ -22,6 +22,8 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
       t.integer    :rolling_quest_score, default: 0
       t.integer    :arena_score, default: 0
       t.text       :body
+      t.boolean    :is_icon, null: false, default: false
+      t.boolean    :is_illust, null: false, default: false
 
       t.timestamps
     end
