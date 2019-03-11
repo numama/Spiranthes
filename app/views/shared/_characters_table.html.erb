@@ -19,7 +19,7 @@
     <tr>
       <td class="characters-table-icon">
         <a href="<%= url_for character_path(character, anchor: "details") %>">
-          <%= image_tag "characters/icons/nil.png", class: "character-icon-image" %>
+          <img src="/assets/characters/icons/default.png" data-src="/assets/characters/icons/icon<%= character.id %>.png", alt="<%= character.name %>", class="character-icon-image lazyload">
           <%= character.name %>
         </a>
       </td>
