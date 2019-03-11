@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
     t.string "level1"
     t.string "level2"
     t.string "level3"
+    t.string "level4"
+    t.string "level5"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name", "category"], name: "index_abilities_on_name_and_category"

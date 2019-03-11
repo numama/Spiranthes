@@ -8,12 +8,24 @@
   </tr>
   <tr>
     <th>レベル2</th>
-    <td><%= "#{@ability.description} #{@ability.level1}" %></td>
+    <td><%= "#{@ability.description} #{@ability.level2}" %></td>
   </tr>
   <tr>
     <th>レベル3</th>
-    <td><%= "#{@ability.description} #{@ability.level1}" %></td>
+    <td><%= "#{@ability.description} #{@ability.level3}" %></td>
   </tr>
+<% if @ability.category != 3 %>
+  <tr>
+    <th>レベル4</th>
+    <td><%= "#{@ability.description} #{@ability.level4}" %></td>
+  </tr>
+<% if @ability.category != 2 %>
+  <tr>
+    <th>レベル5</th>
+    <td><%= "#{@ability.description} #{@ability.level5}" %></td>
+  </tr>
+<% end %>
+<% end %>
 </table>
 
 <h2><%= @ability.name %>を持つユニット</h2>
