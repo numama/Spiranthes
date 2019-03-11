@@ -56,7 +56,9 @@ CSV.read("db/import/data/abilities.csv", headers: true).each do |row|
     description: row["description"],
     level1: row["level1"],
     level2: row["level2"],
-    level3: row["level3"]
+    level3: row["level3"],
+    level4: row["level4"],
+    level5: row["level5"]
   )
 end
 

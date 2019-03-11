@@ -7,6 +7,8 @@ class CreateAbilities < ActiveRecord::Migration[5.2]
       t.string :level1
       t.string :level2
       t.string :level3
+      t.string :level4
+      t.string :level5
 
       t.timestamps
     end
