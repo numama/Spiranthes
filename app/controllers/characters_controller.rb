@@ -19,9 +19,7 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.includes(
-      :realm, :property, :type, :ability1, :ability2, :ability2, :head_leaderskill, :foot_leaderskill, :is_icon, :is_illust
-    ).find(params[:id])
+    @character = Character.select_for_show(params[:id])
   end
 
   def new
