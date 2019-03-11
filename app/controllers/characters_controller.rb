@@ -24,15 +24,14 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
-    get_leaderskills
-    get_abilities
+    get_arrays_for_form
   end
 
   def create
     @character = Character.new(character_params)
-    # なんか以下2つを追加しないとエラーになる
-    get_leaderskills
-    get_abilities
+    # なんか以下を追加しないとエラーになる
+    # 保存時にもこの配列データを参照してるっぽい・・？
+    get_arrays_for_form
     if @character.save
       redirect_to character_path(@character)
     else
@@ -42,14 +41,12 @@ class CharactersController < ApplicationController
 
   def edit
     @character = Character.find(params[:id])
-    get_leaderskills
-    get_abilities
+    get_arrays_for_form
   end
 
   def update
     @character = Character.find(params[:id])
-    get_leaderskills
-    get_abilities
+    get_arrays_for_form
     if @character.update(character_params)
       redirect_to character_path(params[:id])
     else
@@ -72,12 +69,9 @@ class CharactersController < ApplicationController
   end
 
   private
-    def get_leaderskills
+    def get_arrays_for_form
       @head_leaderskill_array = HeadLeaderskill.get_array
       @foot_leaderskill_array = FootLeaderskill.get_array
-    end
-
-    def get_abilities
       @abilities = Ability.get_array_by_category
     end
 
@@ -96,9 +90,15 @@ class CharactersController < ApplicationController
         :ability1_id,
         :ability2_id,
         :ability3_id,
+        :from,
+        :motion,
+        :attack_count,
         :guild_battle_score,
         :rolling_quest_score,
-        :body
+        :arena_score,
+        :body,
+        :is_icon,
+        :is_illust
       )
     end
 end
