@@ -1,7 +1,7 @@
 class Ability < ApplicationRecord
-  has_many :characters, class_name: 'Character', :foreign_key => 'ability1_id'
-  has_many :characters, class_name: 'Character', :foreign_key => 'ability2_id'
-  has_many :characters, class_name: 'Character', :foreign_key => 'ability3_id'
+  has_many :characters1, class_name: 'Character', :foreign_key => 'ability1_id'
+  has_many :characters2, class_name: 'Character', :foreign_key => 'ability2_id'
+  has_many :characters3, class_name: 'Character', :foreign_key => 'ability3_id'
 
   def self.get_array
     if abilities = self.select(:id, :name, :category)

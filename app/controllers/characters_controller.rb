@@ -23,7 +23,7 @@ class CharactersController < ApplicationController
   def show
     @character = Character.includes(
       :realm, :property, :type, :ability1, :ability2, :ability2, :head_leaderskill, :foot_leaderskill
-    ).find_by(params[:id])
+    ).find(params[:id])
   end
 
   def new
