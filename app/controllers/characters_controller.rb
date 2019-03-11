@@ -86,6 +86,7 @@ class CharactersController < ApplicationController
         :head_leaderskill_id,
         :foot_leaderskill_id,
         :skill,
+        :skill_point,
         :skill_description,
         :ability1_id,
         :ability2_id,
