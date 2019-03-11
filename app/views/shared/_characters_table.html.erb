@@ -16,7 +16,6 @@
     </tr>
   <% else %>
     <% @characters.each do |character| %>
-    <% debug character.is_icon %>
     <tr>
       <td class="characters-table-icon">
         <a href="<%= url_for character_path(character, anchor: "details") %>">
