@@ -5,7 +5,7 @@
 <% end %>
 
 <% if @character.is_illust %>
-  <% image_tag "characters/illusts/illust#{character.id}.png", class: "character-illust" %>
+  <%= image_tag "characters/illusts/illust#{@character.id}.png", class: "character-illust" %>
 <% else %>
   <%= image_tag "characters/illusts/default.png", class: "character-illust" %>
 <% end %>
