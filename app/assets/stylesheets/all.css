@@ -120,7 +120,7 @@ h3 {
 .admin-button,
 .button {
   display: block;
-  margin: 20px auto 0 auto;
+  margin: 20px auto 20px auto;
   width: 80%;
   height: 60px;
   border-radius: 1px;
