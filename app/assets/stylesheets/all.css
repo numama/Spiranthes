@@ -89,6 +89,7 @@ main {
 }
 
 h1 {
+  margin-bottom: 20px;
   position: relative;
   min-height: 50px;
   line-height: 50px;
