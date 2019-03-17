@@ -107,7 +107,7 @@ aside > a:nth-child(3n) {
 main {
   order: 2;
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
 }
 
 h1 {
