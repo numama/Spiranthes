@@ -23,4 +23,4 @@ doc/
 .secret
 
 #Ignore character images
-/app/assets/images/characters
+/app/assets/images
