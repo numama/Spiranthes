@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
     t.text "body"
     t.boolean "is_icon", default: false, null: false
     t.boolean "is_illust", default: false, null: false
+    t.boolean "is_picked", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["foot_leaderskill_id"], name: "index_characters_on_foot_leaderskill_id"
