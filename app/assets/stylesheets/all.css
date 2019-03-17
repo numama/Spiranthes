@@ -384,13 +384,18 @@ h3 {
   flex-wrap: wrap;
 }
 
-.search-box-items > label,
-.search-box-unselected > label {
+.search-box-label,
+.search-box-label2 {
   display: block;
   text-align: center;
   height: 28px;
   line-height: 28px;
   overflow: hidden;
+}
+
+.search-box-label2 {
+  height: 56px;
+  line-height: 56px;
 }
 
 .search-box-items-rarity > label { width: calc(100% / 3); }
