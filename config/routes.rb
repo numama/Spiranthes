@@ -28,6 +28,6 @@ Rails.application.routes.draw do
   delete  'logout',  to: 'sessions#destroy'
 
   # 静的ページ
-  get 'information' to: 'static_pages#information'
+  get 'information', to: 'static_pages#information', as: 'information'
 
 end

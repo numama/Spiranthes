@@ -5,17 +5,18 @@
 </p>
 <h2>管理人について</h2>
 <p> 
-  　当サイトは個人で運営しております。問い合わせ等は以下のアドレスまでお願いします。
+  　当サイトは個人で運営しております。お問い合わせ等は以下のアドレスまでお願いします。
 </p>
-<p>
-  <script type="text/javascript">
-  var user = "hoge";
-  var at = "@";
-  var server = "example.com";
-  document.write(user + at + server);
-  </script>
-</p>
+<p id="mail"></p>
 <h2>著作権</h2>
 <p>
   　当サイトは個人が運営している非公式のファンサイトであり、ラストピリオドの運営企業とは異なります。また、当サイトのすべての画像や攻略データの著作権は、ラストピリオドの運営元であるHappy Elements株式会社に帰属します。
 </p>
+
+<script type="text/javascript">
+  var mail = document.getElementById('mail')
+  var user = "kouchoubot";
+  var at = "@";
+  var server = "gmail.com";
+  mail.textContent = user + at + server;
+</script>
