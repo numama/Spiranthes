@@ -19,7 +19,8 @@
 
   <body>
     <header>
-      <a href="/">Spiranthes</a>
+      <a href="/" class="logo">Spiranthes</a>
+      <%= link_to "", information_path, class: "information" %>
     </header>
     <div class="overall-container">
       <main>
@@ -29,9 +30,9 @@
         <%= link_to "ユニット評価", {controller: :characters, action: :evaluate} %>
         <%= link_to "ユニット一覧", characters_path %>
         <a href="/">詳細検索</a>
-        <a href="/">ギルバト攻略</a>
+<!--         <a href="/">ギルバト攻略</a>
         <a href="/">このサイトは？</a>
-        <a href="/">Q & A</a>
+        <a href="/">Q & A</a> -->
       </aside>
     </div>
     <footer>

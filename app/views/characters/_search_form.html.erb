@@ -6,12 +6,12 @@
       星
     </td>
     <td class="search-box-unselected">
-      <label><%= radio_button "character", "rarity", 0, class: "search-radio-button", checked: true %><span>指定なし</span></label>
+      <label class="search-box-label"><%= radio_button "character", "rarity", 0, class: "search-radio-button", checked: true %><span>指定なし</span></label>
     </td>
     <td class="search-box-items search-box-items-rarity">
-      <label><%= radio_button "character", "rarity", 5, class: "search-radio-button" %><span>5</span></label>
-      <label><%= radio_button "character", "rarity", 4, class: "search-radio-button" %><span>4</span></label>
-      <label><%= radio_button "character", "rarity", 3, class: "search-radio-button" %><span>3</span></label>
+      <label class="search-box-label"><%= radio_button "character", "rarity", 5, class: "search-radio-button" %><span>5</span></label>
+      <label class="search-box-label"><%= radio_button "character", "rarity", 4, class: "search-radio-button" %><span>4</span></label>
+      <label class="search-box-label"><%= radio_button "character", "rarity", 3, class: "search-radio-button" %><span>3</span></label>
     </td>
   </tr>
 
@@ -20,14 +20,14 @@
       属性
     </td>
     <td class="search-box-unselected">
-      <label><%= radio_button "character", "property_id", 0, class: "search-radio-button", checked: true %><span>指定なし</span></label>
+      <label class="search-box-label"><%= radio_button "character", "property_id", 0, class: "search-radio-button", checked: true %><span>指定なし</span></label>
     </td>
     <td class="search-box-items search-box-items-property">
-      <label><%= radio_button "character", "property_id", 1, class: "search-radio-button" %><span>火</span></label>
-      <label><%= radio_button "character", "property_id", 2, class: "search-radio-button" %><span>水</span></label>
-      <label><%= radio_button "character", "property_id", 3, class: "search-radio-button" %><span>木</span></label>
-      <label><%= radio_button "character", "property_id", 4, class: "search-radio-button" %><span>光</span></label>
-      <label><%= radio_button "character", "property_id", 5, class: "search-radio-button" %><span>闇</span></label>
+      <label class="search-box-label"><%= radio_button "character", "property_id", 1, class: "search-radio-button" %><span>火</span></label>
+      <label class="search-box-label"><%= radio_button "character", "property_id", 2, class: "search-radio-button" %><span>水</span></label>
+      <label class="search-box-label"><%= radio_button "character", "property_id", 3, class: "search-radio-button" %><span>木</span></label>
+      <label class="search-box-label"><%= radio_button "character", "property_id", 4, class: "search-radio-button" %><span>光</span></label>
+      <label class="search-box-label"><%= radio_button "character", "property_id", 5, class: "search-radio-button" %><span>闇</span></label>
     </td>
   </tr>
 
@@ -36,16 +36,16 @@
       レルム
     </td>
     <td class="search-box-unselected">
-      <label><%= radio_button "character", "realm_id", 0, class: "search-radio-button", checked: true %><span>指定なし</span></label>
+      <label class="search-box-label2"><%= radio_button "character", "realm_id", 0, class: "search-radio-button", checked: true %><span>指定なし</span></label>
     </td>
     <td class="search-box-items search-box-items-realm">
-      <label><%= radio_button "character", "realm_id", 1, class: "search-radio-button" %><span>ヒューマ</span></label>
-      <label><%= radio_button "character", "realm_id", 2, class: "search-radio-button" %><span>スペア</span></label>
-      <label><%= radio_button "character", "realm_id", 3, class: "search-radio-button" %><span>アニマル</span></label>
-      <label><%= radio_button "character", "realm_id", 4, class: "search-radio-button" %><span>ブラッド</span></label>
-      <label><%= radio_button "character", "realm_id", 5, class: "search-radio-button" %><span>スカイ</span></label>
-      <label><%= radio_button "character", "realm_id", 6, class: "search-radio-button" %><span>ヘル</span></label>
-      <label><%= radio_button "character", "realm_id", 7, class: "search-radio-button" %><span>アンノウン</span></label>
+      <label class="search-box-label"><%= radio_button "character", "realm_id", 1, class: "search-radio-button" %><span>ヒューマ</span></label>
+      <label class="search-box-label"><%= radio_button "character", "realm_id", 2, class: "search-radio-button" %><span>スペア</span></label>
+      <label class="search-box-label"><%= radio_button "character", "realm_id", 3, class: "search-radio-button" %><span>アニマル</span></label>
+      <label class="search-box-label"><%= radio_button "character", "realm_id", 4, class: "search-radio-button" %><span>ブラッド</span></label>
+      <label class="search-box-label"><%= radio_button "character", "realm_id", 5, class: "search-radio-button" %><span>スカイ</span></label>
+      <label class="search-box-label"><%= radio_button "character", "realm_id", 6, class: "search-radio-button" %><span>ヘル</span></label>
+      <label class="search-box-label"><%= radio_button "character", "realm_id", 7, class: "search-radio-button" %><span>アンノウン</span></label>
     </td>
   </tr>
 
@@ -54,15 +54,15 @@
       タイプ
     </td>
     <td class="search-box-unselected">
-      <label><%= radio_button "character", "type_id", 0, class: "search-radio-button", checked: true %><span>指定なし</span></label>
+      <label class="search-box-label2"><%= radio_button "character", "type_id", 0, class: "search-radio-button", checked: true %><span>指定なし</span></label>
     </td>
     <td class="search-box-items search-box-items-type">
-      <label><%= radio_button "character", "type_id", 1, class: "search-radio-button" %><span>アタッカー</span></label>
-      <label><%= radio_button "character", "type_id", 2, class: "search-radio-button" %><span>ヒーロー</span></label>
-      <label><%= radio_button "character", "type_id", 3, class: "search-radio-button" %><span>キラー</span></label>
-      <label><%= radio_button "character", "type_id", 4, class: "search-radio-button" %><span>ジャマー</span></label>
-      <label><%= radio_button "character", "type_id", 5, class: "search-radio-button" %><span>ディフェンダー</span></label>
-      <label><%= radio_button "character", "type_id", 6, class: "search-radio-button" %><span>サポーター</span></label>
+      <label class="search-box-label"><%= radio_button "character", "type_id", 1, class: "search-radio-button" %><span>アタッカー</span></label>
+      <label class="search-box-label"><%= radio_button "character", "type_id", 2, class: "search-radio-button" %><span>ヒーロー</span></label>
+      <label class="search-box-label"><%= radio_button "character", "type_id", 3, class: "search-radio-button" %><span>キラー</span></label>
+      <label class="search-box-label"><%= radio_button "character", "type_id", 4, class: "search-radio-button" %><span>ジャマー</span></label>
+      <label class="search-box-label"><%= radio_button "character", "type_id", 5, class: "search-radio-button" %><span>ディフェンダー</span></label>
+      <label class="search-box-label"><%= radio_button "character", "type_id", 6, class: "search-radio-button" %><span>サポーター</span></label>
     </td>
   </tr>
   </table>
