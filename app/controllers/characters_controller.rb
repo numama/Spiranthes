@@ -99,7 +99,8 @@ class CharactersController < ApplicationController
         :arena_score,
         :body,
         :is_icon,
-        :is_illust
+        :is_illust,
+        :is_picked
       )
     end
 end

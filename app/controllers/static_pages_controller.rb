@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def top
-    @characters = [Character.last]
+    @characters = Character.where(is_picked: true)
   end
 
   def guild
