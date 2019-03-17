@@ -16,10 +16,12 @@ class CharactersController < ApplicationController
       @characters = @characters.where(realm_id: cond["realm_id"].to_i) unless cond["realm_id"] == "0"
       @characters = @characters.where(type_id: cond["type_id"].to_i) unless cond["type_id"] == "0"
     end
+    @title = "ユニット一覧【ラスピリ】"
   end
 
   def show
     @character = Character.select_for_show(params[:id])
+    @title = "#{@character.name}の能力・評価【ラスピリ】"
   end
 
   def new
@@ -66,6 +68,7 @@ class CharactersController < ApplicationController
     else
       @characters = Character.select_for_table.order(rolling_quest_score: :desc).limit(30)
     end
+    @title = "ユニット評価ランキング【ラスピリ】"
   end
 
   private
