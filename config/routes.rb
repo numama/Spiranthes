@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   # アビリティ
   resources :abilities, only: [:show]
 
+  # Q&A
+  resources :questions
+
   # ユーザ
   get 'signup', to: 'users#new'
   post 'users', to: 'users#create'
