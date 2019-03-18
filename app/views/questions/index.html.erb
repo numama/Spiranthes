@@ -13,6 +13,8 @@
 
 <% end %>
 
-<%= @questions.each do |question| %>
-  <p><%= question.inspect %></p>
+<% @questions.each do |question| %>
+  <p>
+    <%= link_to question.body, question_path(question.id) %>
+  </p>
 <% end %>
