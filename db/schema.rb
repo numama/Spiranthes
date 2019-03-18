@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_092148) do
+ActiveRecord::Schema.define(version: 2019_03_18_175724) do
 
   create_table "abilities", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name", "category"], name: "index_abilities_on_name_and_category"
+  end
+
+  create_table "answers", force: :cascade do |t|
+    t.integer "question_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "character_comments", force: :cascade do |t|
@@ -124,6 +132,13 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
   create_table "properties", force: :cascade do |t|
     t.string "name"
     t.string "symbol"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "name"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
