@@ -1,11 +1,17 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.new
+    @questions = Question.all.limit(10)
+    @question = Question.new
   end
 
   def create
-    
+    @question = Question.new(question_params)
+    if @question.save
+      redirect_to questions_path
+    else
+      render 'index'
+    end
   end
 
   private

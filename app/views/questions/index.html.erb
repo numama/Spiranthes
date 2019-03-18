@@ -5,10 +5,14 @@
   回答したものについてはここで公開します。
 </p>
 
-<%= form_for @questions do |f| %>
+<%= form_for @question do |f| %>
 
   <%= f.text_field :name, placeholder: "お名前（任意）" %>
   <%= f.text_area :body, placeholder: "本文（必須）" %>
   <%= f.submit "送信" %>
 
+<% end %>
+
+<%= @questions.each do |question| %>
+  <p><%= question.inspect %></p>
 <% end %>
