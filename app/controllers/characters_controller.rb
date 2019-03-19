@@ -68,6 +68,10 @@ class CharactersController < ApplicationController
     else
       @characters = Character.all_for_table.order(rolling_quest_score: :desc).limit(30)
     end
+    # 名前の横に順位を書く
+    @characters.each.with_index(1) do |character, i|
+      character.name = "【#{i}位】 #{character.name}"
+    end
     @title = "ユニット評価ランキング【ラスピリ】"
   end
 
