@@ -16,5 +16,6 @@
 <% @questions.each do |question| %>
   <p>
     <%= link_to question.body, question_path(question.id) %>
+    <%= link_to '[ X ]', question_path(question), method: :delete %>
   </p>
 <% end %>

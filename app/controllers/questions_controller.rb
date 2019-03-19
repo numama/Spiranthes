@@ -1,7 +1,12 @@
 class QuestionsController < ApplicationController
 
   def index
-    @questions = Question.all.limit(10)
+    # 管理者はすべての投稿を、ユーザは回答済みの投稿を表示
+    if logged_in?
+      @questions = Question.limit(128)
+    else
+      @questions = Question.where(is_answered: true).limit(10)
+    end
     @question = Question.new
   end
 
@@ -16,6 +21,12 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+  end
+
+  def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    redirect_to questions_path
   end
 
   private
