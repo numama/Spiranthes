@@ -2,7 +2,7 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
   def change
     create_table :characters do |t|
       t.string     :name
-      t.string     :symbol
+      t.string     :symbol, null: false
       t.references :realm, default: 1
       t.references :property, default: 1
       t.integer    :rarity, default: 5

@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2019_03_18_175724) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
-    t.string "symbol"
+    t.string "symbol", null: false
     t.integer "realm_id", default: 1
     t.integer "property_id", default: 1
     t.integer "rarity", default: 5
@@ -140,7 +140,7 @@ ActiveRecord::Schema.define(version: 2019_03_18_175724) do
   create_table "questions", force: :cascade do |t|
     t.string "name"
     t.text "body"
-    t.boolean "is_answered"
+    t.boolean "is_answered", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
