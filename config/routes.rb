@@ -17,7 +17,9 @@ Rails.application.routes.draw do
   resources :abilities, only: [:show]
 
   # Q&A
-  resources :questions
+  resources :questions do
+    resources :answers, only: [:create, :destroy]
+  end
 
   # ユーザ
   get 'signup', to: 'users#new'
