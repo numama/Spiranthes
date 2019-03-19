@@ -1,5 +1,5 @@
 class Question < ApplicationRecord
-  has_one :answer
+  has_one :answer, dependent: :destroy
 
   validates :name,
     allow_nil: true,
