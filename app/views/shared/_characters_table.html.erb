@@ -18,7 +18,7 @@
     <% @characters.each do |character| %>
     <tr>
       <td class="characters-table-icon">
-        <a href="<%= url_for character_path(character) %>">
+        <a href="<%= url_for character_path(character.symbol) %>">
           <% if character.is_icon %>
           <img src="/assets/characters/icons/default.png" data-src="/assets/characters/icons/icon<%= character.id %>.png", alt="<%= character.name %>", class="character-icon-image lazyload">
           <% else %>
@@ -28,7 +28,7 @@
           <%= character.name %>
         </a>
       </td>
-      <td class="characters-table-<%= character.property.symbol %>"><%= character.property.name %></td>
+      <td ><%= character.property.name %></td>
       <td><%= character.realm.name %></td>
       <td class="characters-table-score">
         <%= character.rolling_quest_score %>点

@@ -62,15 +62,3 @@ CSV.read("db/import/data/abilities.csv", headers: true).each do |row|
     level5: row["level5"]
   )
 end
-
-# characters
-CSV.read("db/import/data/characters.csv", headers: true).each do |row|
-  Character.create!(
-    name:              row["name"],
-    property_id:       row["property_id"],
-    realm_id:          row["realm_id"],
-    type_id:           row["type_id"],
-    rarity:            row["rarity"],
-    from:              row["from"]
-  )
-end

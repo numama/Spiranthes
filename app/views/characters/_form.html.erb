@@ -9,6 +9,13 @@
   </section>
 
   <section class="form-character">
+    <h3>シンボル（URLのなまえになる）</h3>
+    <label>
+      <%= f.text_field :symbol %>
+    </label>
+  </section>
+
+  <section class="form-character">
     <h3>レア度</h3>
     <label><%= f.radio_button :rarity, 5, checked: true %>星5</label>
     <label><%= f.radio_button :rarity, 4 %>星4</label>

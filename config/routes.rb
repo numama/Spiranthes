@@ -10,9 +10,7 @@ Rails.application.routes.draw do
   end
 
   # ユニット
-  resources :characters do
-    resources :character_comments, only: [:create]
-  end
+  resources :characters
   get 'evaluate', to: 'characters#evaluate'
 
   # アビリティ
