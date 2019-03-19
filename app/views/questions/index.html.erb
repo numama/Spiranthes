@@ -1,0 +1,30 @@
+<h1>Q & A</h1>
+<p>
+  疑問点やパーティの相談、攻略質問、<br>
+  またこのサイトへの要望や、ユニット評価への疑問など自由にお寄せください。<br>
+  回答したものについてはここで公開します。
+</p>
+
+<% if @question.errors.present? %>
+  <div class="alert">
+  <% @question.errors.messages.values.flatten.each do |message| %>
+    <p><%= message %></p>
+  <% end %>
+  </div>
+<% end %>
+<%= form_for @question do |f| %>
+
+  <%= f.text_field :name, placeholder: "お名前（任意）" %>
+  <%= f.text_area :body, placeholder: "本文（必須）" %>
+  <%= f.submit "送信" %>
+
+<% end %>
+
+<% @questions.each do |question| %>
+  <p>
+    <%= link_to question.body, question_path(question.id) %>
+    <% if @current_user.present? %>
+      [<%= link_to ' X ', question_path(question), method: :delete %>]
+    <% end %>
+  </p>
+<% end %>

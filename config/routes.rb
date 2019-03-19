@@ -10,13 +10,16 @@ Rails.application.routes.draw do
   end
 
   # ユニット
-  resources :characters do
-    resources :character_comments, only: [:create]
-  end
+  resources :characters
   get 'evaluate', to: 'characters#evaluate'
 
   # アビリティ
   resources :abilities, only: [:show]
+
+  # Q&A
+  resources :questions do
+    resources :answers, only: [:create, :destroy]
+  end
 
   # ユーザ
   get 'signup', to: 'users#new'

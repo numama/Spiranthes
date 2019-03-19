@@ -1,0 +1,21 @@
+<h2>質問</h2>
+<p><%= @question.name %></p>
+<p><%= @question.body %></p>
+
+<h2>回答</h2>
+<% if @answers.present? %>
+  <% @answers.each do |answer| %>
+    <div>
+      <%= simple_format answer.body %>
+    </div>
+    <% if @current_user.present? %>
+      [<%= link_to " 削除 ", question_answer_path(@question.id, answer.id), method: :delete %>]
+    <% end %>
+  <% end %>
+<% end %>
+<% if @current_user.present? %>
+  <%= form_for @answer, url: question_answers_path(@question.id)  do |f| %>
+    <%= f.text_area :body %>
+    <%= f.submit "送信" %>
+  <% end %>
+<% end %>

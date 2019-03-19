@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_07_092148) do
+ActiveRecord::Schema.define(version: 2019_03_18_175724) do
 
   create_table "abilities", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name", "category"], name: "index_abilities_on_name_and_category"
+  end
+
+  create_table "answers", force: :cascade do |t|
+    t.integer "question_id"
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
   end
 
   create_table "character_comments", force: :cascade do |t|
@@ -55,6 +63,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
+    t.string "symbol", null: false
     t.integer "realm_id", default: 1
     t.integer "property_id", default: 1
     t.integer "rarity", default: 5
@@ -82,7 +91,7 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
     t.datetime "updated_at", null: false
     t.index ["foot_leaderskill_id"], name: "index_characters_on_foot_leaderskill_id"
     t.index ["head_leaderskill_id"], name: "index_characters_on_head_leaderskill_id"
-    t.index ["name", "from"], name: "index_characters_on_name_and_from"
+    t.index ["name", "symbol", "from"], name: "index_characters_on_name_and_symbol_and_from"
     t.index ["property_id"], name: "index_characters_on_property_id"
     t.index ["realm_id"], name: "index_characters_on_realm_id"
     t.index ["special_leaderskill_id"], name: "index_characters_on_special_leaderskill_id"
@@ -124,6 +133,14 @@ ActiveRecord::Schema.define(version: 2019_03_07_092148) do
   create_table "properties", force: :cascade do |t|
     t.string "name"
     t.string "symbol"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "name"
+    t.text "body"
+    t.boolean "is_answered", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

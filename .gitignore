@@ -22,5 +22,8 @@ doc/
 .idea
 .secret
 
-#Ignore character images
+# Ignore character images
 /app/assets/images
+
+# Ignore data backups
+/db/import/data

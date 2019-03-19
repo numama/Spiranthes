@@ -11,6 +11,15 @@ class Character < ApplicationRecord
   belongs_to :ability3, class_name: 'Ability', :foreign_key => 'ability3_id'
   has_one :character_status, dependent: :destroy
 
+  validates :symbol,
+    # presence: { message: "シンボルは必ず入力してください" },
+    # uniqueness: { mesasge: "既に存在するシンボルです" },
+    presence: true,
+    uniqueness: true,
+    format: { with: /\A([a-z]|\d)+\z/, message: "シンボルは半角英数字で入力してください"}
+
+
+
   # validates :name,
   #   presence: true, 
   #   uniqueness: true
@@ -47,11 +56,17 @@ class Character < ApplicationRecord
   #   length: { in: 1..3 }, 
   #   numericality: true
 
+  # これを追加するだけでURLの:idのぶぶんがsymbolになる
+  def to_param
+    symbol
+  end
+
   # characters_tableに表示する情報を引き出すメソッド
-  def self.select_for_table
+  def self.all_for_table
     self.select(
       :id,
       :name,
+      :symbol,
       :rarity,
       :property_id,
       :realm_id,
@@ -63,10 +78,10 @@ class Character < ApplicationRecord
   end
 
   # 詳細表示に必要なデータを引き出すメソッド
-  def self.select_for_show(id)
+  def self.find_for_show(symbol)
     self.includes(
       :realm, :property, :type, :ability1, :ability2, :ability2, :head_leaderskill, :foot_leaderskill
-    ).find(id)
+    ).find_by(symbol: symbol)
   end
   
 
