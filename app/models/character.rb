@@ -47,6 +47,11 @@ class Character < ApplicationRecord
   #   length: { in: 1..3 }, 
   #   numericality: true
 
+  # これを追加するだけでURLの:idのぶぶんがsymbolになる
+  def to_param
+    symbol
+  end
+
   # characters_tableに表示する情報を引き出すメソッド
   def self.all_for_table
     self.select(

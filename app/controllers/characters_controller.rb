@@ -20,7 +20,7 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.find_for_show(params[:symbol])
+    @character = Character.find_for_show(params[:id])
     @title = "#{@character.name}の能力・評価【ラスピリ】"
   end
 
@@ -42,22 +42,22 @@ class CharactersController < ApplicationController
   end
 
   def edit
-    @character = Character.find_by(symbol: params[:symbol])
+    @character = Character.find_by(symbol: params[:id])
     get_arrays_for_form
   end
 
   def update
-    @character = Character.find_by(symbol: params[:symbol])
+    @character = Character.find_by(symbol: params[:id])
     get_arrays_for_form
     if @character.update(character_params)
-      redirect_to character_path(params[:symbol])
+      redirect_to character_path(params[:id])
     else
       render 'edit'
     end
   end
 
   def destroy
-    @character = Character.find_by(symbol: params[:symbol])
+    @character = Character.find_by(symbol: params[:id])
     @character.destroy
     redirect_to characters_path
   end
