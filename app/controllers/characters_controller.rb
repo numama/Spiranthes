@@ -4,7 +4,7 @@ class CharactersController < ApplicationController
   before_action :authentication, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @characters = Character.select_for_table
+    @characters = Character.all_for_table
     # 検索のロジックがあまりにもおそ松
     # これじゃクエリ何回も発行してしまう、もっと良い書き方はないか
     # さらにこういう検索系ってモデルに書くべきだと思う
@@ -20,7 +20,7 @@ class CharactersController < ApplicationController
   end
 
   def show
-    @character = Character.select_for_show(params[:id])
+    @character = Character.find_for_show(params[:symbol])
     @title = "#{@character.name}の能力・評価【ラスピリ】"
   end
 
@@ -81,6 +81,7 @@ class CharactersController < ApplicationController
     def character_params
       params.require(:character).permit(
         :name,
+        :symbol,
         :realm_id,
         :property_id,
         :rarity,

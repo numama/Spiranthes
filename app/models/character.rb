@@ -48,10 +48,11 @@ class Character < ApplicationRecord
   #   numericality: true
 
   # characters_tableに表示する情報を引き出すメソッド
-  def self.select_for_table
+  def self.all_for_table
     self.select(
       :id,
       :name,
+      :symbol,
       :rarity,
       :property_id,
       :realm_id,
@@ -63,10 +64,10 @@ class Character < ApplicationRecord
   end
 
   # 詳細表示に必要なデータを引き出すメソッド
-  def self.select_for_show(id)
+  def self.find_for_show(symbol)
     self.includes(
       :realm, :property, :type, :ability1, :ability2, :ability2, :head_leaderskill, :foot_leaderskill
-    ).find(id)
+    ).find_by(symbol: symbol)
   end
   
 
