@@ -62,3 +62,12 @@ CSV.read("db/import/data/abilities.csv", headers: true).each do |row|
     level5: row["level5"]
   )
 end
+
+# user
+CSV.read("db/import/data/users.csv", headers: true).each do |row|
+  User.create!(
+    name: row["name"],
+    email: row["email"],
+    password_digest: row["password_digest"]
+  )
+end

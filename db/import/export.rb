@@ -18,3 +18,15 @@ end
 File.open("db/import/data/characters.csv", "w") do |file|
   file.write(characters_csv)
 end
+
+users = User.all
+
+user_csv = CSV.generate do |csv|
+  csv << users.column_names
+  users.each do |user|
+    csv << user.attributes.values
+  end
+end
+File.open("db/import/data/users.csv", "w") do |file|
+  file.write(user_csv)
+end
