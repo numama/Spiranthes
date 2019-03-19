@@ -11,6 +11,13 @@ class Character < ApplicationRecord
   belongs_to :ability3, class_name: 'Ability', :foreign_key => 'ability3_id'
   has_one :character_status, dependent: :destroy
 
+  validates :symbol,
+    presence: { message: "シンボルは必ず入力してください" },
+    uniqueness: { mesasge: "既に存在するシンボルです" },
+    format: { with: /\A([a-z]|\d)+\z/, message: "シンボルは半角英数字で入力してください"}
+
+
+
   # validates :name,
   #   presence: true, 
   #   uniqueness: true
