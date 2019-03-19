@@ -1,4 +1,5 @@
 class QuestionsController < ApplicationController
+  before_action :authentication, only: [:destroy]
 
   def index
     # 管理者はすべての投稿を、ユーザは回答済みの投稿を表示
