@@ -50,7 +50,7 @@ class CharactersController < ApplicationController
     @character = Character.find_by(symbol: params[:id])
     get_arrays_for_form
     if @character.update(character_params)
-      redirect_to character_path(params[:id])
+      redirect_to character_path(@character.symbol)
     else
       render 'edit'
     end
