@@ -42,22 +42,22 @@ class CharactersController < ApplicationController
   end
 
   def edit
-    @character = Character.find(params[:id])
+    @character = Character.find_by(symbol: params[:symbol])
     get_arrays_for_form
   end
 
   def update
-    @character = Character.find(params[:id])
+    @character = Character.find_by(symbol: params[:symbol])
     get_arrays_for_form
     if @character.update(character_params)
-      redirect_to character_path(params[:id])
+      redirect_to character_path(params[:symbol])
     else
       render 'edit'
     end
   end
 
   def destroy
-    @character = Character.find(params[:id])
+    @character = Character.find_by(symbol: params[:symbol])
     @character.destroy
     redirect_to characters_path
   end
