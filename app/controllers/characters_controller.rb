@@ -64,9 +64,9 @@ class CharactersController < ApplicationController
 
   def evaluate
     if params[:guild]
-      @characters = Character.select_for_table.order(guild_battle_score: :desc).limit(30)
+      @characters = Character.all_for_table.order(guild_battle_score: :desc).limit(30)
     else
-      @characters = Character.select_for_table.order(rolling_quest_score: :desc).limit(30)
+      @characters = Character.all_for_table.order(rolling_quest_score: :desc).limit(30)
     end
     @title = "ユニット評価ランキング【ラスピリ】"
   end
