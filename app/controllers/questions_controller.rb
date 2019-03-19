@@ -22,6 +22,8 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @answers = @question.answers
+    @answer = Answer.new
   end
 
   def destroy
@@ -32,7 +34,7 @@ class QuestionsController < ApplicationController
 
   private
     def question_params
-      params.require(:question).permit(:name, :body)
+      params.require(:question).permit(:name, :body, :is_answered)
     end
 
 end
