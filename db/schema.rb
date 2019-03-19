@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(version: 2019_03_18_175724) do
   create_table "questions", force: :cascade do |t|
     t.string "name"
     t.text "body"
+    t.boolean "is_answered"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
