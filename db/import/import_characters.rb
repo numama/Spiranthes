@@ -1,7 +1,10 @@
 # characters
+require "csv"
+
 CSV.read("db/import/data/characters.csv", headers: true).each do |row|
   Character.create!(
     name:                     row["name"],
+    symbol:                   row["symbol"],
     realm_id:                 row["realm_id"],
     property_id:              row["property_id"],
     rarity:                   row["rarity"],
@@ -16,7 +19,6 @@ CSV.read("db/import/data/characters.csv", headers: true).each do |row|
     ability1_id:              row["ability1_id"],
     ability2_id:              row["ability2_id"],
     ability3_id:              row["ability3_id"],
-    from:                     row["from"],
     motion:                   row["motion"],
     attack_count:             row["attack_count"],
     guild_battle_score:       row["guild_battle_score"],
