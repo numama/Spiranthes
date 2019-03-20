@@ -313,6 +313,10 @@ h3 {
   font-size: 15px;
 }
 
+.character-body > p {
+  margin: 25px 0;
+}
+
 .character-body p {
   margin-bottom: 15px;
 }
