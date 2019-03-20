@@ -24,6 +24,20 @@ p {
   margin-bottom: 15px;
 }
 
+/* アラート */
+
+.alert-success,
+.alert-info,
+.alert-danger {
+  margin: 20px 0;
+  padding: 15px 10px 15px 10px;
+  font-size: 12px;
+}
+
+.alert-success { background: aliceblue; }
+.alert-info { background: beige; }
+.alert-danger { background: mistyrose; }
+
 /****************************************
   header
 ****************************************/
