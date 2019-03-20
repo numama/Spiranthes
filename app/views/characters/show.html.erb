@@ -89,6 +89,10 @@
   <%= simple_format @character.body %>
 </div>
 
+<div class="alert-info">
+  掲載内容にミスや指摘、要望がある場合は<%= link_to "こちら", questions_path %>へお願いします。
+</div>
+
 <% if @current_user %>
 <%= link_to "編集", edit_character_path, class: "admin-button" %>
 <% end %>
