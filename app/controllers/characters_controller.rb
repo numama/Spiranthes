@@ -5,16 +5,11 @@ class CharactersController < ApplicationController
 
   def index
     @characters = Character.all_for_table
-    # 検索のロジックがあまりにもおそ松
-    # これじゃクエリ何回も発行してしまう、もっと良い書き方はないか
-    # さらにこういう検索系ってモデルに書くべきだと思う
-    # rubyはfalseとnil以外すべて真扱いだよ
     cond = params["character"]
     if cond.present?
-      @characters = @characters.where(rarity: cond["rarity"].to_i) unless cond["rarity"] == "0"
-      @characters = @characters.where(property_id: cond["property_id"].to_i) unless cond["property_id"] == "0"
-      @characters = @characters.where(realm_id: cond["realm_id"].to_i) unless cond["realm_id"] == "0"
-      @characters = @characters.where(type_id: cond["type_id"].to_i) unless cond["type_id"] == "0"
+      # 検索
+      @characters = Character.where_by_conditions(@characters, cond)
+      @cond_str = Character.get_conditions_str(cond)
     end
     @title = "ユニット一覧【ラスピリ】"
   end

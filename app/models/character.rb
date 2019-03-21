@@ -18,44 +18,6 @@ class Character < ApplicationRecord
     uniqueness: true,
     format: { with: /\A([a-z]|\d)+\z/, message: "シンボルは半角英数字で入力してください"}
 
-
-
-  # validates :name,
-  #   presence: true, 
-  #   uniqueness: true
-  # validates :realm_id, 
-  #   presence: true, 
-  #   length: { in: 1..3 }, 
-  #   numericality: true
-  # validates :attribute_id,
-  #   presence: true,
-  #   length: { in: 1..3 },
-  #   numericality: true
-  # validates :rarity,
-  #   presence: true,
-  #   length: { is: 1 }, 
-  #   numericality: true
-  # validates :type_id, 
-  #   presence: true, 
-  #   length: { in: 1..3 }, 
-  #   numericality: true
-  # validates :leaderskill_id, 
-  #   presence: true, 
-  #   length: { in: 1..3 }, 
-  #   numericality: true
-  # validates :ability1_id, 
-  #   presence: true, 
-  #   length: { in: 1..3 }, 
-  #   numericality: true
-  # validates :ability2_id, 
-  #   presence: true, 
-  #   length: { in: 1..3 }, 
-  #   numericality: true
-  # validates :ability3_id, 
-  #   presence: true, 
-  #   length: { in: 1..3 }, 
-  #   numericality: true
-
   # これを追加するだけでURLの:idのぶぶんがsymbolになる
   def to_param
     symbol
@@ -84,6 +46,27 @@ class Character < ApplicationRecord
     ).find_by(symbol: symbol)
   end
   
+  # getパラメータからの検索
+  # 検索のロジックがあまりにもおそ松
+  # これじゃクエリ何回も発行してしまう、もっと良い書き方はないか
+  # さらにこういう検索系ってモデルに書くべきだと思う
+  # rubyはfalseとnil以外すべて真扱いだよ
+  def self.where_by_conditions(characters, cond)
+    characters = characters.where(rarity: cond["rarity"].to_i) unless cond["rarity"] == "0"
+    characters = characters.where(property_id: cond["property_id"].to_i) unless cond["property_id"] == "0"
+    characters = characters.where(realm_id: cond["realm_id"].to_i) unless cond["realm_id"] == "0"
+    characters = characters.where(type_id: cond["type_id"].to_i) unless cond["type_id"] == "0"
+    return characters
+  end
 
+  def self.get_conditions_str(cond)
+    result = " | "
+    result = result + ["指定なし", "星1", "星2", "星3", "星4", "星5"][cond["rarity"].to_i] + " | " unless cond["rarity"] == "0"
+    result = result + ["指定なし", "火", "水", "木", "光", "闇"][cond["property_id"].to_i] + " | " unless cond["property_id"] == "0"
+    result = result + ["指定なし", "ヒューマ", "スペア", "アニマル", "ブラッド", "スカイ", "ヘル", "アンノウン"][cond["realm_id"].to_i] + " | " unless cond["realm_id"] == "0"
+    result = result + ["指定なし", "アタッカー", "ヒーロー", "キラー", "ジャマー", "ディフェンダー", "サポーター"][cond["type_id"].to_i] + " | " unless cond["type_id"] == "0"
+    return "指定なし" if result == " | "
+    return result
+  end
 
 end

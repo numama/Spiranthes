@@ -1,6 +1,6 @@
 <h2>質問</h2>
-<p><%= @question.name %></p>
-<p><%= @question.body %></p>
+<div class="answers-name"><%= @question.name %>さん</div>
+<%= simple_format @question.body %>
 
 <h2>回答</h2>
 <% if @answers.present? %>
@@ -19,3 +19,5 @@
     <%= f.submit "送信" %>
   <% end %>
 <% end %>
+
+<a href="/questions#questions-list" class="button">一覧に戻る</a>
