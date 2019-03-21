@@ -2,9 +2,11 @@
 
 <%= render "search_form" %>
 
+<% if params["character"].present? %>
 <div class="alert-info", id="search-result">
   【 検索結果 】<br>
   <%= @cond_str %>
 </div>
+<% end %>
 
 <%= render "shared/characters_table" %>
