@@ -2,4 +2,9 @@
 
 <%= render "search_form" %>
 
+<div class="alert-info", id="search-result">
+  【 検索結果 】<br>
+  <%= @cond_str %>
+</div>
+
 <%= render "shared/characters_table" %>
