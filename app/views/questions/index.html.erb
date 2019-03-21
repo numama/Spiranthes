@@ -24,13 +24,13 @@
 
 <% end %>
 
-<h2>質問一覧</h2>
+<h2 id="questions-list">質問一覧</h2>
 
 <% @questions.each do |question| %>
-  <p>
-    <%= link_to question.body, question_path(question.id) %>
+  <div class="question">
     <% if @current_user.present? %>
-      [<%= link_to ' X ', question_path(question), method: :delete %>]
+      [<%= link_to ' 削除 ', question_path(question), method: :delete %>]
     <% end %>
-  </p>
+    <%= link_to question.body, question_path(question.id) %>
+  </div>
 <% end %>
