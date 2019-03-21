@@ -1,8 +1,7 @@
 <h1>Q & A</h1>
 <p>
-  疑問点やパーティの相談、攻略質問、<br>
-  またこのサイトへの要望や指摘、ユニット評価への疑問など自由にお寄せください。<br>
-  回答したものについてはここで公開します。
+  このサイトへの要望や掲載内容へのご指摘、またパーティの相談、攻略質問など自由にお寄せください。<br>
+  回答したものについてはここで公開します（<span class="maker-red">質問一覧はこの下</span>）。
 </p>
 
 <% if @question.errors.present? %>
@@ -19,11 +18,13 @@
 <% end %>
 <%= form_for @question do |f| %>
 
-  <%= f.text_field :name, placeholder: "お名前（任意）" %>
-  <%= f.text_area :body, placeholder: "本文（必須）" %>
-  <%= f.submit "送信" %>
+  <%= f.text_field :name, placeholder: "名前（任意）" ,class: "input-text"%>
+  <%= f.text_area :body, placeholder: "本文（必須）", class: "textarea" %>
+  <%= f.submit "送信", class: "button" %>
 
 <% end %>
+
+<h2>質問一覧</h2>
 
 <% @questions.each do |question| %>
   <p>
