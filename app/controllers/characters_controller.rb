@@ -2,6 +2,8 @@ class CharactersController < ApplicationController
 
   # データ管理のところはログインしてないとだめでーす
   before_action :authentication, only: [:new, :create, :edit, :update, :destroy]
+  # キャラクター情報を更新したときにランク情報を付け直す
+  before_action :remake_ranks, only: [:create, :update, :destroy]
 
   def index
     @characters = Character.all_for_table.order(rolling_quest_score: :desc)
@@ -75,6 +77,36 @@ class CharactersController < ApplicationController
       @head_leaderskill_array = HeadLeaderskill.get_array
       @foot_leaderskill_array = FootLeaderskill.get_array
       @abilities = Ability.get_array_by_category
+    end
+
+    def remake_ranks
+      setting = {
+        S: 5,
+        A: 15,
+        B: 30,
+        C: 30
+      }
+      characters = Character.all
+      counts = characters.count
+      others = counts - setting.values.sum if (counts > setting.values.sum)
+      rank_ary = ["S"]*setting[:S]+
+        ["A"]*setting[:A]+
+        ["B"]*setting[:B]+
+        ["C"]*setting[:C]+
+        ["D"]*others
+
+      rolling_order = characters.order(rolling_quest_score: :desc).map { |i| i.id - 1 }
+      guild_order = characters.order(guild_battle_score: :desc).map { |i| i.id - 1 }
+
+      rank_ary.each.with_index(0) do |rank, i|
+        characters[rolling_order[i]].rolling_quest_rank = rank
+      end
+      rank_ary.each.with_index(0) do |rank, i|
+        characters[guild_order[i]].guild_battle_rank = rank
+      end
+      characters.each do |character|
+        character.save
+      end
     end
 
     def character_params
