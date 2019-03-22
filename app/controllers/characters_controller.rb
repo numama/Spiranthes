@@ -2,6 +2,8 @@ class CharactersController < ApplicationController
 
   # データ管理のところはログインしてないとだめでーす
   before_action :authentication, only: [:new, :create, :edit, :update, :destroy]
+  # キャラクター情報を更新したときにランク情報を付け直す
+  after_action :remake_ranks
 
   def index
     @characters = Character.all_for_table.order(rolling_quest_score: :desc)
@@ -30,8 +32,6 @@ class CharactersController < ApplicationController
     # 保存時にもこの配列データを参照してるっぽい・・？
     get_arrays_for_form
     if @character.save
-      # キャラクター情報を更新したときにランク情報を付け直す
-      remake_ranks
       redirect_to character_path(@character)
     else
       render 'new'
@@ -47,8 +47,6 @@ class CharactersController < ApplicationController
     @character = Character.find_by(symbol: params[:id])
     get_arrays_for_form
     if @character.update(character_params)
-      # キャラクター情報を更新したときにランク情報を付け直す
-      remake_ranks
       redirect_to character_path(@character.symbol)
     else
       render 'edit'
