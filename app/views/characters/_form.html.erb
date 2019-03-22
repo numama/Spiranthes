@@ -67,11 +67,11 @@
     </label>
     <label class="label-block">
       アビ2
-      <%= f.select :ability2_id, @abilities["ability2"] %>
+      <%= f.select :ability2_id, @abilities["ability2"].unshift(["-", 1]) %>
     </label>
     <label class="label-block">
       アビ3
-      <%= f.select :ability3_id, @abilities["ability3"] %>
+      <%= f.select :ability3_id, @abilities["ability3"].unshift(["-", 1]) %>
     </label>
   </section>
 
