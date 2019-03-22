@@ -23,7 +23,8 @@ doc/
 .secret
 
 # Ignore character images
-/app/assets/images
+/app/assets/images/characters
+/app/assets/images/material
 
 # Ignore data backups
 /db/import/data

@@ -5,7 +5,7 @@
       <% if @title.present? %>
         <%= @title %>
       <% else %>
-        Spiranthes
+        <%= Spiranthes::Application.config.title %>
       <% end %>
     </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -20,7 +20,7 @@
 
   <body>
     <header>
-      <a href="/" class="logo">Spiranthes</a>
+      <a href="/" class="logo"><%= Spiranthes::Application.config.title %></a>
       <%= link_to "", information_path, class: "information" %>
     </header>
     <div class="overall-container">
@@ -30,9 +30,6 @@
       <aside id="gnav">
         <%= link_to "ユニット評価", {controller: :characters, action: :evaluate} %>
         <%= link_to "ユニット一覧", characters_path %>
-<!--         <a href="/">詳細検索</a>
-        <a href="/">ギルバト攻略</a>
-        <a href="/">このサイトは？</a> -->
         <%= link_to "Q & A", questions_path %>
       </aside>
     </div>

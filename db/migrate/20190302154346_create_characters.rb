@@ -21,6 +21,8 @@ class CreateCharacters < ActiveRecord::Migration[5.2]
       t.integer    :attack_count
       t.integer    :guild_battle_score, default: 0
       t.integer    :rolling_quest_score, default: 0
+      t.string     :guild_battle_rank, default: "-"
+      t.string     :rolling_quest_rank, default: "-"
       t.integer    :arena_score, default: 0
       t.text       :body
       t.boolean    :is_icon, null: false, default: false

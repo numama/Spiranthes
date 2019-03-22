@@ -6,8 +6,6 @@ class SessionsController < ApplicationController
     # ログインしてるユーザがログインページに行こうとすると、ルートファイルへ飛ばす
     if logged_in?
       redirect_to root_path
-    else
-      render layout: false
     end
   end
 
