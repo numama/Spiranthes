@@ -5,7 +5,7 @@
       <% if @title.present? %>
         <%= @title %>
       <% else %>
-        Spiranthes
+        <%= Spiranthes::Application.config.title %>
       <% end %>
     </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -20,7 +20,7 @@
 
   <body>
     <header>
-      <a href="/" class="logo">Spiranthes</a>
+      <a href="/" class="logo"><%= Spiranthes::Application.config.title %></a>
       <%= link_to "", information_path, class: "information" %>
     </header>
     <div class="overall-container">

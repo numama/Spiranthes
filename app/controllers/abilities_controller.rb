@@ -15,5 +15,6 @@ class AbilitiesController < ApplicationController
           :id, :name, :symbol, :rarity, :property_id, :realm_id, :type_id, :rolling_quest_score, :guild_battle_score, :is_icon
         ).includes(:property, :realm)
     end
+    @title = "#{@ability.name}の詳細と所持ユニット【ラスピリ】"
   end
 end

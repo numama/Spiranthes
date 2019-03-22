@@ -9,6 +9,7 @@ class QuestionsController < ApplicationController
       @questions = Question.where(is_answered: true).order(id: "DESC").limit(10)
     end
     @question = Question.new
+    @title = "Q & A - #{Spiranthes::Application.config.title}"
   end
 
   def create
@@ -26,6 +27,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answers = @question.answers
     @answer = Answer.new
+    @title = "質問と回答 - #{Spiranthes::Application.config.title}"
   end
 
   def destroy
