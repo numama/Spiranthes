@@ -36,7 +36,7 @@ class Character < ApplicationRecord
       :rolling_quest_score,
       :guild_battle_score,
       :is_icon
-    ).includes(:property, :realm, :type).order(rolling_quest_score: :desc)
+    ).includes(:property, :realm, :type)
   end
 
   # 詳細表示に必要なデータを引き出すメソッド

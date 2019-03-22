@@ -4,7 +4,7 @@ class CharactersController < ApplicationController
   before_action :authentication, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @characters = Character.all_for_table
+    @characters = Character.all_for_table.order(rolling_quest_score: :desc)
     cond = params["character"]
     if cond.present?
       # 検索
@@ -58,10 +58,10 @@ class CharactersController < ApplicationController
   end
 
   def evaluate
-    if params[:guild]
-      @characters = Character.all_for_table.order(guild_battle_score: :desc).limit(30)
+    if params[:guild].present?
+      @characters = Character.all_for_table.order(guild_battle_score: :desc).limit(20)
     else
-      @characters = Character.all_for_table.order(rolling_quest_score: :desc).limit(30)
+      @characters = Character.all_for_table.order(rolling_quest_score: :desc).limit(20)
     end
     # 名前の横に順位を書く
     @characters.each.with_index(1) do |character, i|
