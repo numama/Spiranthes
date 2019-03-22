@@ -207,10 +207,26 @@ h3 {
   background: #95bd55;
 }
 
+/* トップページ */
+
+.banner {
+  display: block;
+  width: 100%;
+}
+
+.ranking-banner,
+.characters-banner,
+.questions-banner {
+  margin: 20px auto;
+  display: block;
+  width: 100%;
+}
+
 /* テーブル */
 
 .characters-table {
   margin-top: 25px;
+  margin-bottom: 25px;
   width: 100%;
   border-top : 1px solid #ddd;
   border-left: 1px solid #ddd;
