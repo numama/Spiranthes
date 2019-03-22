@@ -81,6 +81,7 @@ class CharactersController < ApplicationController
       @abilities = Ability.get_array_by_category
     end
 
+    # ランキングの上から順にD~Sのランクを付けていくメソッド（重い）
     def remake_ranks
       setting = {
         S: 5,
@@ -88,7 +89,10 @@ class CharactersController < ApplicationController
         B: 30,
         C: 30
       }
-      characters = Character.all
+      characters = Character.select(:id,
+        :rolling_quest_score, :rolling_quest_rank,
+        :guild_battle_score, :guild_battle_rank
+      )
       counts = characters.count
       others = counts - setting.values.sum if (counts > setting.values.sum)
       rank_ary = ["S"]*setting[:S]+
