@@ -89,10 +89,7 @@ class CharactersController < ApplicationController
         B: 30,
         C: 30
       }
-      characters = Character.select(:id,
-        :rolling_quest_score, :rolling_quest_rank,
-        :guild_battle_score, :guild_battle_rank
-      )
+      characters = Character.all
       counts = characters.count
       others = counts - setting.values.sum if (counts > setting.values.sum)
       rank_ary = ["S"]*setting[:S]+
