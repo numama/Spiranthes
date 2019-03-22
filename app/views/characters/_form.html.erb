@@ -83,7 +83,7 @@
     </label>
     <label class="label-block">
       スキルポイント
-      <%= f.text_field :skill_point %>
+      <%= f.number_field :skill_point %>
     </label>
     <label class="label-block">
       説明文
@@ -103,7 +103,7 @@
     </label>
     <label class="label-block">
       攻撃回数
-      <%= f.text_field :attack_count %>
+      <%= f.number_field :attack_count %>
     </label>
   </section>
 
@@ -126,11 +126,11 @@
     <h3>点数</h3>
     <label class="label-block">
       周回評価
-      <%= f.text_field :rolling_quest_score %>
+      <%= f.number_field :rolling_quest_score %>
     </label>
     <label class="label-block">
       ギルバト評価
-      <%= f.text_field :guild_battle_score %>
+      <%= f.number_field :guild_battle_score %>
     </label>
   </section>
 
