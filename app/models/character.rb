@@ -34,7 +34,9 @@ class Character < ApplicationRecord
       :realm_id,
       :type_id,
       :rolling_quest_score,
+      :rolling_quest_rank,
       :guild_battle_score,
+      :guild_battle_rank,
       :is_icon
     ).includes(:property, :realm, :type)
   end
