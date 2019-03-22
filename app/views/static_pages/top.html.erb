@@ -9,9 +9,9 @@
 
 <h1>メニュー</h1>
 
-<%= link_to image_tag("ranking.png", class: "banner"), evaluate_path, class: "ranking-banner" %>
-<%= link_to image_tag("characters.png", class: "banner"), characters_path, class: "characters-banner" %>
-<%= link_to image_tag("questions.png", class: "banner"), questions_path, class: "questions-banner" %>
+<%= link_to image_tag("ranking.png", class: "banner"), evaluate_path %>
+<%= link_to image_tag("characters.png", class: "banner"), characters_path %>
+<%= link_to image_tag("questions.png", class: "banner"), questions_path %>
 
 <% if @current_user.present? %>
 <%= link_to "ログアウト", logout_path, class: "admin-button", method: :delete %>
