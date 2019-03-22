@@ -82,6 +82,8 @@ ActiveRecord::Schema.define(version: 2019_03_18_175724) do
     t.integer "attack_count"
     t.integer "guild_battle_score", default: 0
     t.integer "rolling_quest_score", default: 0
+    t.string "guild_battle_rank", default: "-"
+    t.string "rolling_quest_rank", default: "-"
     t.integer "arena_score", default: 0
     t.text "body"
     t.boolean "is_icon", default: false, null: false
