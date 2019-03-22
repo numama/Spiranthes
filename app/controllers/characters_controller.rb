@@ -3,7 +3,7 @@ class CharactersController < ApplicationController
   # データ管理のところはログインしてないとだめでーす
   before_action :authentication, only: [:new, :create, :edit, :update, :destroy]
   # キャラクター情報を更新したときにランク情報を付け直す
-  after_action :remake_ranks
+  after_action :remake_ranks, only: [:create, :update]
 
   def index
     @characters = Character.all_for_table.order(rolling_quest_score: :desc)
