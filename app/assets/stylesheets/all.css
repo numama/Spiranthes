@@ -16,61 +16,22 @@ body {
   color: #333;
 }
 
-a {
-  color: #518daf;
-}
-
-p {
-  margin-bottom: 15px;
-}
-
-/* アラート */
-
-.alert-success,
-.alert-info,
-.alert-danger {
-  margin: 20px 0;
-  padding: 15px 10px 15px 10px;
-  font-size: 12px;
-  text-align: center;
-}
-
-.alert-success { background: aliceblue; }
-.alert-info { background: beige; }
-.alert-danger { background: mistyrose; }
-
-/* マーカー */
-
-.maker-red {
-  background:linear-gradient(transparent 75%, #ffadad 75%);
-  font-weight:bold; 
-}
-.maker-green {
-  background:linear-gradient(transparent 75%, #cdf1b0 75%);
-  font-weight:bold; 
-}
-
-input, textarea, select {
-  font-size: 16px;
-}
-
-input[type="text"], textarea {
-  width: 100%;
-}
 
 /****************************************
   header
 ****************************************/
 
 header {
-  position: relative;
   width: 100%;
   height: 60px;
   padding: 0 10px;
   font-size: 22px;
   line-height: 60px;
-  border-bottom: 1px solid #ddd;
   background: #95bd55;
+}
+
+.header-container {
+  position: relative;
 }
 
 .logo {
@@ -152,6 +113,16 @@ main {
   min-height: 80vh;
 }
 
+/* タグ初期設定 ----------------------------------*/
+
+a {
+  color: #518daf;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
 h1 {
   margin-bottom: 20px;
   position: relative;
@@ -166,7 +137,7 @@ h2 {
   margin: 25px 0;
   padding-left: 10px ;
   font-size: 17px;
-  border-left: 3px solid #95db55;
+  border-left: 3px solid #95bd55;
 }
 
 h3 {
@@ -175,12 +146,15 @@ h3 {
   font-weight: bold;
 }
 
-.character-illust {
-  display: block;
-  margin: 0 auto;
-  width: 60%;
-  max-width: 300px;
+input, textarea, select {
+  font-size: 16px;
 }
+
+input[type="text"], textarea {
+  width: 100%;
+}
+
+/* ボタン ----------------------------------*/
 
 .admin-button,
 .button {
@@ -211,7 +185,33 @@ h3 {
   background: #95bd55;
 }
 
-/* トップページ */
+/* アラート ----------------------------------*/
+
+.alert-success,
+.alert-info,
+.alert-danger {
+  margin: 20px 0;
+  padding: 15px 10px 15px 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.alert-success { background: aliceblue; }
+.alert-info { background: beige; }
+.alert-danger { background: mistyrose; }
+
+/* マーカー ----------------------------------*/
+
+.maker-red {
+  background:linear-gradient(transparent 75%, #ffadad 75%);
+  font-weight:bold; 
+}
+.maker-green {
+  background:linear-gradient(transparent 75%, #cdf1b0 75%);
+  font-weight:bold; 
+}
+
+/* トップページ ----------------------------------*/
 
 .banner {
   display: block;
@@ -219,7 +219,7 @@ h3 {
   margin: 30px 0;
 }
 
-/* テーブル */
+/* ユニットテーブル ----------------------------------*/
 
 .characters-table {
   margin-top: 25px;
@@ -270,6 +270,15 @@ h3 {
   display: block;
   width: 60px;
   height: 60px;
+}
+
+/* ユニット詳細ページ ----------------------------------*/
+
+.character-illust {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  max-width: 300px;
 }
 
 .details-table {
@@ -337,7 +346,7 @@ h3 {
   line-height: 160%;
 }
 
-/* フォーム */
+/* フォーム ----------------------------------*/
 
 .form-character {
   margin-top: 20px;
@@ -365,7 +374,7 @@ h3 {
   display: block;
 }
 
-/* 評価一覧ページ */
+/* 評価一覧ページ ----------------------------------*/
 
 .button-wrapper {
   display: flex;
@@ -389,7 +398,7 @@ h3 {
   color: white;
 }
 
-/* ユニット検索ページ */
+/* ユニット検索ページ ----------------------------------*/
 
 .search-table {
   margin-top: 30px;
@@ -454,7 +463,7 @@ h3 {
   color: white;
 }
 
-/* Q & A */
+/* Q & A ----------------------------------*/
 
 .new_question {
   margin: 25px 0;
