@@ -219,6 +219,13 @@ input[type="text"], textarea {
   margin: 30px 0;
 }
 
+.intro {
+  margin-bottom: 20px;
+  padding: 15px 10px 15px 10px;
+  font-size: 12px;
+  background: beige;
+}
+
 /* ユニットテーブル ----------------------------------*/
 
 .characters-table {
