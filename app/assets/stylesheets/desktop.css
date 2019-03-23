@@ -33,6 +33,10 @@
     background-position: 0 10px;
   }
 
+  .information {
+    top: 15px;
+  }
+
   /* overall ----------------------------------------------*/
 
   .overall-container {
@@ -83,6 +87,8 @@
   h1 {
     font-size: 28px;
     text-align: left;
+    line-height: 70px;
+    border-bottom: 1px solid #ddd;
   }
 
   .alert-success,
@@ -96,7 +102,7 @@
   }
 
   .intro {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     padding: 20px;
     font-size: 16px;
     border: 2px dashed #ddd;
