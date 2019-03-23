@@ -91,4 +91,10 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # application.jsでtree . を無効にしたので、ほかのファイルにアセットパイプラインを適用するための設定 
+  config.assets.precompile += ['*.js']
+
+  # どのアクセスもhttpsにする設定（？）
+  config.force_ssl = true
 end
