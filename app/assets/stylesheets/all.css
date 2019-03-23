@@ -73,16 +73,25 @@ header {
 
 aside {
   order: 1;
-  display: flex;
   margin-bottom: 20px;
   flex-wrap: wrap;
   width: 100%;
   border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
   border-top: 1px solid #ddd;
 }
 
-aside > a {
+#main-menu {
+  display: flex;
+  width: 100%;
+}
+
+.sub-menu,
+.menu-header {
+  display: none;
+}
+
+
+aside a {
   display: block;
   width: calc(100% / 3);
   height: 45px;
@@ -93,10 +102,6 @@ aside > a {
   overflow: hidden;
   font-size: 13px;
   color: #333;
-}
-
-aside > a:nth-child(3n) {
-  border-right: none;
 }
 
 .current {

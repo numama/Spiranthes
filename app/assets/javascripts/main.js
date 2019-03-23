@@ -15,7 +15,7 @@
 // });
 
 // ナビゲーションのエレメントを取得
-var gnav = document.getElementById("gnav");
+var gnav = document.getElementById("main-menu");
 
 var path = location.pathname;
 

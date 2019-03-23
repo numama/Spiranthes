@@ -30,9 +30,17 @@
       <%= yield %>
       </main>
       <aside id="gnav">
-        <%= link_to "ユニット評価", {controller: :characters, action: :evaluate} %>
-        <%= link_to "ユニット一覧", characters_path %>
-        <%= link_to "Q & A", questions_path %>
+        <div id="main-menu">
+          <div class="menu-header">メインメニュー</div>
+          <%= link_to "ユニット評価", {controller: :characters, action: :evaluate} %>
+          <%= link_to "ユニット一覧", characters_path %>
+          <%= link_to "Q & A", questions_path %>
+        </div>
+        <div class="sub-menu">
+          <div class="menu-header">サブメニュー</div>
+          <%= link_to "トップページ", root_path %>
+          <%= link_to "このサイトは？", information_path %>
+        </div>
       </aside>
     </div>
     <footer>
