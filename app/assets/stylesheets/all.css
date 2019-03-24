@@ -161,6 +161,7 @@ input[type="text"], textarea {
 
 /* ボタン ----------------------------------*/
 
+.search-button,
 .admin-button,
 .button {
   display: block;
@@ -185,7 +186,8 @@ input[type="text"], textarea {
 }
 
 .button:focus,
-.admin-button:focus, {
+.admin-button:focus,
+.search-button:focus {
   color: white;
   background: #95bd55;
 }
