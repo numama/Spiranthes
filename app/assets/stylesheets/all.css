@@ -520,7 +520,6 @@ textarea {
 .input-text:focus::placeholder,
 .textarea:focus::placeholder {
   color: #95bd55;
-  margin: 0 auto;
 }
 
 .question {
