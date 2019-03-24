@@ -133,4 +133,56 @@
     border: 2px dashed #ddd;
   }
 
+  .banner {
+    margin: 30px auto;
+    width: 400px;
+  }
+
+  /* table ----------------------------------------------*/
+
+  .characters-table {
+    margin: 0 auto 30px auto;
+    width: 560px;
+    font-size: 16px;
+  }
+
+  .characters-table-icon {
+    width: 140px;
+    font-size: 14px;
+  }
+
+  .characters-table-icon > a {
+    transition: all 300ms;
+  }
+
+  .characters-table-icon > a:hover {
+    color: #0e567c;
+  }
+
+  .character-icon-image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .characters-table-score {
+    font-size: 28px;
+  }
+
+  .evaluate-button-wrapper {
+    margin-bottom: 30px;
+    width: 400px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 20px;
+  }
+
+  .evaluate-page-button {
+    transition: all 200ms;
+  }
+
+  .evaluate-page-button:hover {
+    background: beige;
+    color: #999;
+  }
+
 }
