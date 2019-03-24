@@ -102,11 +102,15 @@
   /* main ----------------------------------------------*/
 
   main {
-    padding: 30px;
+    padding: 20px 40px;
     order: 2;
     width: 740px;
     background: white;
     border: 1px solid #ddd;
+  }
+
+  p {
+    line-height: 1.6em;
   }
 
   h1 {
@@ -114,6 +118,15 @@
     text-align: left;
     line-height: 70px;
     border-bottom: 1px solid #ddd;
+  }
+
+  h2 {
+    margin: 25px 0;
+    padding-left: 14px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 22px;
+    border-left: 5px solid #95bd55;
   }
 
   .alert-success,
@@ -143,6 +156,12 @@
   .search-button {
     font-size: 22px;
     width: 460px;
+    transition: all 120ms;
+  }
+
+  .button:hover {
+    background: #95bd55;
+    color: white;
   }
 
   /* table ----------------------------------------------*/
@@ -198,10 +217,9 @@
 
   form {
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom: 10px;
     width: 560px;
-    border-top: 2px dashed #ddd;
     border-bottom: 2px dashed #ddd;
     margin-bottom: 30px;
   }
@@ -250,6 +268,18 @@
   .search-button:hover {
     border: 1px solid #95bd55;
     color: #95bd55;
+  }
+
+  /* Q & A -----------------------------------*/
+
+  .input-text, .textarea {
+    margin: 5px auto;
+    width: 460px;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: 1px solid #aaa;
+    font-size: 18px;
+    transition: all 120ms;
   }
 
 }
