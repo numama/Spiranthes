@@ -121,7 +121,7 @@
   }
 
   h2 {
-    margin: 25px 0;
+    margin: 30px 0;
     padding-left: 14px;
     height: 30px;
     line-height: 30px;
@@ -135,7 +135,7 @@
     margin: 30px auto;
     width: 500px;
     padding: 20px;
-    font-size: 18px;
+    font-size: 15px;
     text-align: center;
   }
 
@@ -162,6 +162,52 @@
   .button:hover {
     background: #95bd55;
     color: white;
+  }
+
+  /* show ----------------------------------------------*/
+
+  #basic-info-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .character-illust {
+    margin: 0;
+    width: 230px;
+    float: left;
+  }
+
+  .details-table {
+    width: 360px;
+  }
+
+  .details-table th,
+  .details-table td {
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    text-align: center;
+    border-right: 1px solid #ddd;
+  }
+
+  .scores-table {
+    width: 400px;
+  }
+
+  .scores-table th {
+    height: 35px;
+    font-size: 15px;
+  }
+
+  .scores-table td {
+    font-size: 34px;
+  }
+
+  .character-body {
+    margin: 0 auto;
+    width: 500px;
+    font-size: 16px;
   }
 
   /* table ----------------------------------------------*/
