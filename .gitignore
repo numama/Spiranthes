@@ -22,6 +22,10 @@ doc/
 .idea
 .secret
 
+# Ignore secrets
+/config/*.enc
+/config/*.key
+
 # Ignore character images
 /app/assets/images/characters
 /app/assets/images/material
