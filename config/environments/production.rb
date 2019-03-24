@@ -95,6 +95,5 @@ Rails.application.configure do
   # application.jsでtree . を無効にしたので、ほかのファイルにアセットパイプラインを適用するための設定 
   config.assets.precompile += ['*.js']
 
-  # どのアクセスもhttpsにする設定（？）
-  config.force_ssl = true
+  config.require_master_key = true
 end

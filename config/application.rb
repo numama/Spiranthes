@@ -19,5 +19,12 @@ module Spiranthes
     # title
     config.title = "ちょこっと攻略"
     config.search_title = "ラスピリちょこっと攻略解説 | ラストピリオド"
+
+    # アプリが日本語だよっていう設定
+    config.i18n.default_locale = :ja
+
+    # タイムゾーンの設定
+    config.time_zone = 'Tokyo'
+    config.active_record.default_timezone = :local
   end
 end
