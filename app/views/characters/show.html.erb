@@ -4,75 +4,83 @@
 <%= link_to "編集", edit_character_path, class: "admin-button" %>
 <% end %>
 
-<% if @character.is_illust %>
-  <%= image_tag "characters/illusts/illust#{@character.id}.png", class: "character-illust" %>
-<% else %>
-  <%= image_tag "characters/illusts/default.png", class: "character-illust" %>
-<% end %>
-
 <h2>基本情報</h2>
 
-<table class="details-table">
-  <tr>
-    <th>名前</th>
-    <th>レア度</th>
-    <th>属性</th>
-  </tr>
-  <tr>
-    <td><%= @character.name %></td>
-    <td><%= "★" * @character.rarity %></td>
-    <td><%= @character.property.name %></td>
-  </tr>
-  <tr>
-    <th>レルム</th>
-    <th colspan="2">タイプ</th>
-  </tr>
-  <tr>
-    <td><%= @character.realm.name %></td>
-    <td colspan="2"><%= @character.type.name %></td>
-  </tr>
-</table>
+<div id="basic-info-wrapper">
 
-<table class="details-table">
-  <tr>
-    <th>リーダースキル</th>
-  <% if @character.special_leaderskill %>
-    <td><%= character.special_leaderskill %></td>
-  </tr>
-  <tr>
-    <td colspan="2"><%= @character.special_leaderskill.description %></td>
-  </tr>
+  <% if @character.is_illust %>
+    <%= image_tag "characters/illusts/illust#{@character.id}.png", class: "character-illust" %>
   <% else %>
-    <td><%= "#{@character.head_leaderskill.name}の#{@character.foot_leaderskill.name}" %></td>
-  </tr>
-  <tr>
-    <td colspan="2"><%= "#{@character.head_leaderskill.description}ユニットの#{@character.foot_leaderskill.description}" %></td>
-  </tr>
+    <%= image_tag "characters/illusts/default.png", class: "character-illust" %>
   <% end %>
-  <tr>
-    <th>スキル</th>
-    <td><%= @character.skill_name %></td>
-  </tr>
-  <tr>
-    <td colspan="2"><%= @character.skill_description %></td>
-  </tr>
-</table>
 
-<table class="details-table">
-  <tr>
-    <th colspan="3">アビリティ</th>
-  </tr>
-  <tr>
-    <td><%= link_to @character.ability1.name, ability_path(@character.ability1.id) %></td>
-    <td><%= link_to @character.ability2.name, ability_path(@character.ability2.id) %></td>
-    <td><%= link_to @character.ability3.name, ability_path(@character.ability3.id) %></td>
-  </tr>
-  <tr>
-    <td><%= @character.ability1.level5 %></td>
-    <td><%= @character.ability2.level4 %></td>
-    <td><%= @character.ability3.level3 %></td>
-  </tr>
-</table>
+  <div id="datails-wrapper">
+
+  <table class="details-table">
+    <tr>
+      <th>名前</th>
+      <th>レア度</th>
+      <th>属性</th>
+    </tr>
+    <tr>
+      <td><%= @character.name %></td>
+      <td><%= "★" * @character.rarity %></td>
+      <td><%= @character.property.name %></td>
+    </tr>
+    <tr>
+      <th>レルム</th>
+      <th colspan="2">タイプ</th>
+    </tr>
+    <tr>
+      <td><%= @character.realm.name %></td>
+      <td colspan="2"><%= @character.type.name %></td>
+    </tr>
+  </table>
+
+  <table class="details-table">
+    <tr>
+      <th>リーダースキル</th>
+    <% if @character.special_leaderskill %>
+      <td><%= character.special_leaderskill %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= @character.special_leaderskill.description %></td>
+    </tr>
+    <% else %>
+      <td><%= "#{@character.head_leaderskill.name}の#{@character.foot_leaderskill.name}" %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= "#{@character.head_leaderskill.description}ユニットの#{@character.foot_leaderskill.description}" %></td>
+    </tr>
+    <% end %>
+    <tr>
+      <th>スキル</th>
+      <td><%= @character.skill_name %></td>
+    </tr>
+    <tr>
+      <td colspan="2"><%= @character.skill_description %></td>
+    </tr>
+  </table>
+
+  <table class="details-table">
+    <tr>
+      <th colspan="3">アビリティ</th>
+    </tr>
+    <tr>
+      <td><%= link_to @character.ability1.name, ability_path(@character.ability1.id) %></td>
+      <td><%= link_to @character.ability2.name, ability_path(@character.ability2.id) %></td>
+      <td><%= link_to @character.ability3.name, ability_path(@character.ability3.id) %></td>
+    </tr>
+    <tr>
+      <td><%= @character.ability1.level5 %></td>
+      <td><%= @character.ability2.level4 %></td>
+      <td><%= @character.ability3.level3 %></td>
+    </tr>
+  </table>
+
+  </div>
+
+</div>
 
 <h2>評価</h2>
 <table class="scores-table">
@@ -81,8 +89,8 @@
     <th>ギルバト評価</th>
   </tr>
   <tr>
-    <td><%= @character.rolling_quest_score %>点</td>
-    <td><%= @character.guild_battle_score %>点</td>
+    <td><%= @character.rolling_quest_rank %></td>
+    <td><%= @character.guild_battle_rank %></td>
   </tr>
 </table>
 <div class="character-body">

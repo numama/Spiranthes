@@ -16,61 +16,22 @@ body {
   color: #333;
 }
 
-a {
-  color: #518daf;
-}
-
-p {
-  margin-bottom: 15px;
-}
-
-/* アラート */
-
-.alert-success,
-.alert-info,
-.alert-danger {
-  margin: 20px 0;
-  padding: 15px 10px 15px 10px;
-  font-size: 12px;
-  text-align: center;
-}
-
-.alert-success { background: aliceblue; }
-.alert-info { background: beige; }
-.alert-danger { background: mistyrose; }
-
-/* マーカー */
-
-.maker-red {
-  background:linear-gradient(transparent 75%, #ffadad 75%);
-  font-weight:bold; 
-}
-.maker-green {
-  background:linear-gradient(transparent 75%, #cdf1b0 75%);
-  font-weight:bold; 
-}
-
-input, textarea, select {
-  font-size: 16px;
-}
-
-input[type="text"], textarea {
-  width: 100%;
-}
 
 /****************************************
   header
 ****************************************/
 
 header {
-  position: relative;
   width: 100%;
   height: 60px;
   padding: 0 10px;
   font-size: 22px;
   line-height: 60px;
-  border-bottom: 1px solid #ddd;
   background: #95bd55;
+}
+
+.header-wrapper {
+  position: relative;
 }
 
 .logo {
@@ -112,16 +73,25 @@ header {
 
 aside {
   order: 1;
-  display: flex;
   margin-bottom: 20px;
   flex-wrap: wrap;
   width: 100%;
   border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
   border-top: 1px solid #ddd;
 }
 
-aside > a {
+#main-menu {
+  display: flex;
+  width: 100%;
+}
+
+.sub-menu,
+.menu-header {
+  display: none;
+}
+
+
+aside a {
   display: block;
   width: calc(100% / 3);
   height: 45px;
@@ -132,10 +102,6 @@ aside > a {
   overflow: hidden;
   font-size: 13px;
   color: #333;
-}
-
-aside > a:nth-child(3n) {
-  border-right: none;
 }
 
 .current {
@@ -152,6 +118,16 @@ main {
   min-height: 80vh;
 }
 
+/* タグ初期設定 ----------------------------------*/
+
+a {
+  color: #518daf;
+}
+
+p {
+  margin-bottom: 15px;
+}
+
 h1 {
   margin-bottom: 20px;
   position: relative;
@@ -166,7 +142,7 @@ h2 {
   margin: 25px 0;
   padding-left: 10px ;
   font-size: 17px;
-  border-left: 3px solid #95db55;
+  border-left: 3px solid #95bd55;
 }
 
 h3 {
@@ -175,13 +151,17 @@ h3 {
   font-weight: bold;
 }
 
-.character-illust {
-  display: block;
-  margin: 0 auto;
-  width: 60%;
-  max-width: 300px;
+input, textarea, select {
+  font-size: 16px;
 }
 
+textarea {
+  width: 100%;
+}
+
+/* ボタン ----------------------------------*/
+
+.search-button,
 .admin-button,
 .button {
   display: block;
@@ -206,12 +186,39 @@ h3 {
 }
 
 .button:focus,
-.admin-button:focus, {
+.admin-button:focus,
+.search-button:focus {
   color: white;
   background: #95bd55;
 }
 
-/* トップページ */
+/* アラート ----------------------------------*/
+
+.alert-success,
+.alert-info,
+.alert-danger {
+  margin: 20px 0;
+  padding: 15px 10px 15px 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.alert-success { background: aliceblue; }
+.alert-info { background: beige; }
+.alert-danger { background: mistyrose; }
+
+/* マーカー ----------------------------------*/
+
+.maker-red {
+  background:linear-gradient(transparent 75%, #ffadad 75%);
+  font-weight:bold; 
+}
+.maker-green {
+  background:linear-gradient(transparent 75%, #cdf1b0 75%);
+  font-weight:bold; 
+}
+
+/* トップページ ----------------------------------*/
 
 .banner {
   display: block;
@@ -219,7 +226,14 @@ h3 {
   margin: 30px 0;
 }
 
-/* テーブル */
+.intro {
+  margin-bottom: 20px;
+  padding: 15px 10px 15px 10px;
+  font-size: 12px;
+  background: beige;
+}
+
+/* ユニットテーブル ----------------------------------*/
 
 .characters-table {
   margin-top: 25px;
@@ -272,8 +286,17 @@ h3 {
   height: 60px;
 }
 
+/* ユニット詳細ページ ----------------------------------*/
+
+.character-illust {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  max-width: 300px;
+}
+
 .details-table {
-  margin: 0 auto 20px auto;
+  margin: 20px auto 20px auto;
   width: 86%;
   font-size: 12px;
 }
@@ -337,7 +360,7 @@ h3 {
   line-height: 160%;
 }
 
-/* フォーム */
+/* フォーム ----------------------------------*/
 
 .form-character {
   margin-top: 20px;
@@ -365,20 +388,20 @@ h3 {
   display: block;
 }
 
-/* 評価一覧ページ */
+/* 評価一覧ページ ----------------------------------*/
 
-.button-wrapper {
+.evaluate-button-wrapper {
   display: flex;
   margin: 30px auto 0 auto;
   width: 70%;
   height: 35px;
+  line-height: 35px;
 }
 
 .evaluate-page-button,
 .evaluate-page-button-active {
   display: block;
   width: 50%;
-  line-height: 35px;
   border: 1px solid #95bd55;
   text-align: center;
   color: #333;
@@ -389,7 +412,7 @@ h3 {
   color: white;
 }
 
-/* ユニット検索ページ */
+/* ユニット検索ページ ----------------------------------*/
 
 .search-table {
   margin-top: 30px;
@@ -454,10 +477,10 @@ h3 {
   color: white;
 }
 
-/* Q & A */
+/* Q & A ----------------------------------*/
 
 .new_question {
-  margin: 25px 0;
+  margin: 25px auto;
   padding: 15px 0;
   border-top: 2px dashed #ddd;
   border-bottom: 2px dashed #ddd;  

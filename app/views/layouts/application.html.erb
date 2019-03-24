@@ -5,7 +5,7 @@
       <% if @title.present? %>
         <%= @title %>
       <% else %>
-        <%= Spiranthes::Application.config.title %>
+        ラスピリ<%= Spiranthes::Application.config.title %>
       <% end %>
     </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -20,17 +20,27 @@
 
   <body>
     <header>
+      <div class="header-wrapper">
       <a href="/" class="logo"><%= Spiranthes::Application.config.title %></a>
       <%= link_to "", information_path, class: "information" %>
+      </div>
     </header>
     <div class="overall-container">
       <main>
       <%= yield %>
       </main>
       <aside id="gnav">
-        <%= link_to "ユニット評価", {controller: :characters, action: :evaluate} %>
-        <%= link_to "ユニット一覧", characters_path %>
-        <%= link_to "Q & A", questions_path %>
+        <div id="main-menu">
+          <div class="menu-header">メインメニュー</div>
+          <%= link_to "ユニット評価", {controller: :characters, action: :evaluate} %>
+          <%= link_to "ユニット一覧", characters_path %>
+          <%= link_to "Q & A", questions_path %>
+        </div>
+        <div class="sub-menu">
+          <div class="menu-header">サブメニュー</div>
+          <%= link_to "トップページ", root_path %>
+          <%= link_to "このサイトは？", information_path %>
+        </div>
       </aside>
     </div>
     <footer>

@@ -17,6 +17,7 @@ module Spiranthes
     # the framework and any gems in your application.
 
     # title
-    config.title = "ラスピリの根っこ"
+    config.title = "ちょこっと攻略"
+    config.search_title = "ラスピリちょこっと攻略解説 | ラストピリオド"
   end
 end
