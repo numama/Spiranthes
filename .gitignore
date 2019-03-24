@@ -23,7 +23,6 @@ doc/
 .secret
 
 # Ignore secrets
-/config/*.enc
 /config/*.key
 
 # Ignore character images
