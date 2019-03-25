@@ -82,10 +82,11 @@ class CharactersController < ApplicationController
     # ランキングの上から順にD~Sのランクを付けていくメソッド（重い）
     def remake_ranks
       setting = {
-        S: 5,
-        A: 15,
+        S: 7,
+        A: 20,
         B: 30,
-        C: 30
+        C: 30,
+        D: 30
       }
       characters = Character.all
       counts = characters.count
@@ -94,7 +95,8 @@ class CharactersController < ApplicationController
         ["A"]*setting[:A]+
         ["B"]*setting[:B]+
         ["C"]*setting[:C]+
-        ["D"]*others
+        ["D"]*setting[:D]+
+        ["E"]*others
 
       rolling_order = characters.order(rolling_quest_score: :desc).map { |i| i.id - 1 }
       guild_order = characters.order(guild_battle_score: :desc).map { |i| i.id - 1 }
