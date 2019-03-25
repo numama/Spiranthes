@@ -21,7 +21,8 @@ module Spiranthes
     config.search_title = "ラスピリちょこっと攻略解説 | ラストピリオド"
 
     # アプリが日本語だよっていう設定
-    config.i18n.default_locale = :ja
+    # :ja のファイルを作らないと使えないよ
+    #config.i18n.default_locale = :ja
 
     # タイムゾーンの設定
     config.time_zone = 'Tokyo'

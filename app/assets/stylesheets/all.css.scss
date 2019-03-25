@@ -39,7 +39,7 @@ header {
   height: 60px;
   color: #fff;
   padding-left: 60px;
-  background: url(/assets/app_icon.png) no-repeat;
+  background: image-url("app_icon.png") no-repeat;
   background-size: 50px 50px;
   background-position: 0 5px;
 }
@@ -51,7 +51,7 @@ header {
   right: 10px;
   width: 40px;
   height: 40px;
-  background: url(/assets/information.png) no-repeat;
+  background: image-url("information.png") no-repeat;
   background-size: 40px 40px;
   background-position: center;
 }
