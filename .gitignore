@@ -25,7 +25,8 @@ doc/
 # Ignore secrets
 /config/*.key
 
-# Ignore character images
+# Ignore assets
+/public/assets
 /app/assets/images/characters
 /app/assets/images/material
 
