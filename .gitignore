@@ -26,9 +26,13 @@ doc/
 /config/*.key
 
 # Ignore assets
-/public/assets
 /app/assets/images/characters
 /app/assets/images/material
 
 # Ignore data backups
 /db/import/data
+
+# Ignore files to production enviroment
+/public/assets
+/node_modules
+/yarn.lock
