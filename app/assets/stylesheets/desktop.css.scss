@@ -34,7 +34,7 @@
     transition: all 120ms;
   }
 
-  .logo:hover {
+  .logo:active {
     transform: translateY(-2px);
   }
 
@@ -184,7 +184,7 @@
   }
 
   .details-table {
-    width: 360px;
+    width: 380px;
   }
 
   .details-table th,
@@ -211,6 +211,7 @@
 
   .character-body {
     margin: 0 auto;
+    padding: 20px;
     width: 500px;
     font-size: 16px;
   }
@@ -322,6 +323,10 @@
   }
 
   /* Q & A -----------------------------------*/
+
+  .new_question {
+    padding-top: 30px;
+  }
 
   .input-text, .textarea {
     margin: 5px auto;

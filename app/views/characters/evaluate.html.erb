@@ -1,4 +1,7 @@
 <h1>ユニット評価ランキング</h1>
+<p>
+  ユニットの周回/ギルバトにおける評価ランキングです。評価基準については<%= link_to "こちら", information_path %>をご覧ください。
+</p>
 <div class="evaluate-button-wrapper">
 <% if params["guild"] == "1" %>
 <%= link_to "周回評価", {controller: :characters, action: :evaluate}, class: "evaluate-page-button" %>
