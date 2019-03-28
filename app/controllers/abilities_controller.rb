@@ -1,7 +1,7 @@
 class AbilitiesController < ApplicationController
   def index
     @ability = Ability.new
-    @abilities = Ability.all.order(:desc)
+    @abilities = Ability.all.order(id: :desc)
   end
 
   def create
@@ -21,7 +21,7 @@ class AbilitiesController < ApplicationController
   def update
     @ability = Ability.find(params[:id])
     if @ability.update(ability_params)
-      redirect_to ability_path(params[:id])
+      redirect_to abilities_path
     else
       render 'edit'
     end
@@ -48,6 +48,6 @@ class AbilitiesController < ApplicationController
 
   private
     def ability_params
-      arams.require(:ability).permit(:name, :description, :category, :level1, :level2, :level3, :level4, :level5)
+      params.require(:ability).permit(:name, :description, :category, :level1, :level2, :level3, :level4, :level5)
     end
 end
