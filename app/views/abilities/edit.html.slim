@@ -1,0 +1,20 @@
+= form_for @ability do |f| 
+  = f.text_field :name, placeholder: "アビリティ名"
+  div
+    |アビリティ： 
+    label
+      = f.radio_button :category, 1, checked: true
+      |1
+    label
+      = f.radio_button :category, 2
+      |2
+    label
+      = f.radio_button :category, 3
+      |3
+  = f.text_area :description, placeholder: "説明"
+  = f.text_field :level1, placeholder: "レベル1"
+  = f.text_field :level2, placeholder: "レベル2"
+  = f.text_field :level3, placeholder: "レベル3"
+  = f.text_field :level4, placeholder: "レベル4"
+  = f.text_field :level5, placeholder: "レベル5"
+  = f.submit "更新"
