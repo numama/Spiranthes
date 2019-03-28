@@ -95,5 +95,9 @@ Rails.application.configure do
   # application.jsでtree . を無効にしたので、ほかのファイルにアセットパイプラインを適用するための設定 
   config.assets.precompile += ['*.js']
 
+  # マスターキーを必須に（？）
   config.require_master_key = true
+
+  # google analyticsの設定
+  GA.tracker = "UA-137166801-1"
 end

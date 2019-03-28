@@ -65,3 +65,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # ハッシュ化に必要なgem
 gem 'bcrypt'
+
+# Google Analyticsを導入するGem
+gem 'google-analytics-rails'
