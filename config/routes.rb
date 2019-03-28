@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   # ユニット
   resources :characters
   get 'evaluate', to: 'characters#evaluate', as: 'evaluate'
+  get 'scores', to: 'characters#scores', as: 'scores'
 
   # アビリティ
   resources :abilities, only: [:show]

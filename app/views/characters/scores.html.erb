@@ -1,0 +1,41 @@
+並び替え： <%= link_to "周回", scores_path %> / 
+<%= link_to "ギルバト", scores_path+"?guild=1" %>
+
+<table class="characters-table", id="character-table">
+  <tr class="characters-table-header">
+    <th>ユニット</th>
+    <th>属性</th>
+    <th>レルム</th>
+    <th>周回</th>
+    <th>ギルバト</th>
+  </tr>
+  <% if @characters.blank? %>
+    <tr>
+      <td colspan="5">条件に合致するユニットは見つかりません。</td>
+    </tr>
+  <% else %>
+    <% @characters.each do |character| %>
+    <tr>
+      <td class="characters-table-icon">
+        <a href="<%= url_for character_path(character.symbol) %>">
+          <% if character.is_icon %>
+          <img src="<%= asset_url "characters/icons/default.png" %>" data-src="<%= asset_url "characters/icons/icon#{character.id}.png" %>", alt="<%= character.name %>", class="character-icon-image lazyload">
+          <% else %>
+          <%= image_tag("characters/icons/default.png", class: "character-icon-image") %>
+          <% end %>
+
+          <%= character.name %>
+        </a>
+      </td>
+      <td ><%= character.property.name %></td>
+      <td><%= character.realm.name %></td>
+      <td class="characters-table-score">
+        <%= character.rolling_quest_score %>
+      </td>
+      <td class="characters-table-score">
+        <%= character.guild_battle_score %>
+      </td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>
