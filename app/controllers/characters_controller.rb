@@ -1,7 +1,7 @@
 class CharactersController < ApplicationController
 
   # データ管理のところはログインしてないとだめでーす
-  before_action :authentication, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authentication, only: [:new, :create, :edit, :update, :destroy, :scores]
   # キャラクター情報を更新したときにランク情報を付け直す
   after_action :remake_ranks, only: [:create, :update]
 
@@ -70,6 +70,14 @@ class CharactersController < ApplicationController
       character.name = "【#{i}位】 #{character.name}"
     end
     @title = "ユニット評価ランキング【ラスピリ】"
+  end
+
+  def scores
+    if params[:guild].present?
+      @characters = Character.all.order(guild_battle_score: :desc)
+    else
+      @characters = Character.all.order(rolling_quest_score: :desc)
+    end
   end
 
   private
