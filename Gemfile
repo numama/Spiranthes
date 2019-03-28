@@ -68,3 +68,6 @@ gem 'bcrypt'
 
 # Google Analyticsを導入するGem
 gem 'google-analytics-rails'
+
+# Slimを導入
+gem 'slim-rails'
