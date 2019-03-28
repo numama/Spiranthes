@@ -61,9 +61,9 @@ class CharactersController < ApplicationController
 
   def evaluate
     if params[:guild].present?
-      @characters = Character.all_for_table.order(guild_battle_score: :desc).limit(20)
+      @characters = Character.all_for_table.order(guild_battle_score: :desc).limit(27)
     else
-      @characters = Character.all_for_table.order(rolling_quest_score: :desc).limit(20)
+      @characters = Character.all_for_table.order(rolling_quest_score: :desc).limit(27)
     end
     # 名前の横に順位を書く
     @characters.each.with_index(1) do |character, i|
