@@ -1,4 +1,6 @@
 class AbilitiesController < ApplicationController
+  before_action :authentication, only: [:index, :create, :edit, :update]
+
   def index
     @ability = Ability.new
     @abilities = Ability.all.order(id: :desc)
