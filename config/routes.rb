@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get 'scores', to: 'characters#scores', as: 'scores'
 
   # アビリティ
-  resources :abilities, only: [:show]
+  resources :abilities
 
   # Q&A
   resources :questions do
