@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- start google analytics -->
     <%= analytics_init if Rails.env.production? %>
+    <!-- end google analytics -->
+    <!-- start title -->
     <title>
       <% if @title.present? %>
         <%= @title %>
@@ -9,14 +12,25 @@
         ラスピリ<%= Spiranthes::Application.config.title %>
       <% end %>
     </title>
+    <!-- end title -->
+    <!-- start viewport -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- end viewport -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- start web fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
+    <!-- end web fonts -->
 
+    <!-- start css -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- end css -->
+
+    <!-- start js -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'lazysizes.min' %>
+    <!-- end js -->
   </head>
 
   <body>
