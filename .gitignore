@@ -36,3 +36,7 @@ doc/
 /public/assets
 /node_modules
 /yarn.lock
+
+# Ignore utility files
+/deploy.sh
+/public/sfo
