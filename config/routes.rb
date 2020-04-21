@@ -34,4 +34,9 @@ Rails.application.routes.draw do
   # 静的ページ
   get 'information', to: 'static_pages#information', as: 'information'
 
+  # API
+  namespace "api" do
+    resources :characters
+  end
+
 end
